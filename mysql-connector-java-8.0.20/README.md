@@ -1,5 +1,5 @@
 ``` 
-Ghi chú: Phiên bản kết mysql-connector này dành cho MacOS. Tải phiên bản phù hợp với hệ điều hành của bạn tại liên kết bên dưới.
+Ghi chú: Phiên bản kết mysql-connector theo liên kết bên dưới.
 ```
 
 Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
