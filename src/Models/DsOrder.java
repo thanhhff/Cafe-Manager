@@ -6,9 +6,17 @@
 package Models;
 
 /**
+ * Model DsOrder: chứa cấu trúc về danh sách Order (đặt hàng) trong nhà hàng
  *
- * @author thanhhff
+ * @author nam.kd
  */
+
+//TODO: tạo các method DsOrder() có chữ ký và không có chữ ký;
+//TODO: hoàn thành các phương thức set / get;
+
 public class DsOrder {
-    
+
+    private String TenMon, MaMon, DVT;
+    private int Gia, SoLuong, MaHoaDon;
+
 }
