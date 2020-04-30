@@ -15,7 +15,7 @@
 
 **Kết nối với MySQL:**
 
-SQL Diagram ([Click Here](https://github.com/thanhhff/Cafe-Manager/blob/master/uml-diagram/Cafe_Manager_DB_diagram.png))
+SQL Diagram ([Click Here](https://github.com/thanhhff/Cafe-Manager/tree/master/uml-diagram))
 
 ```
 Bước 1: Cài đặt XAMPP, khởi động sever MySQL.
