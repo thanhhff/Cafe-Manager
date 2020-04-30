@@ -27,7 +27,7 @@ public class ChiTietHD {
         this.MaMon = 0;
     }
 
-    public ChiTietHD(int maChiTietHD, int maHoaDon, int soLuong, int gia, int maMon) {
+    public ChiTietHD(int maChiTietHD, int maHoaDon, int maMon, int soLuong, int gia) {
         this.MaHoaDon = maChiTietHD;
         this.MaHoaDon = maHoaDon;
         this.SoLuong = soLuong;
