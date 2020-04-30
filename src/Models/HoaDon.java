@@ -31,7 +31,7 @@ public class HoaDon {
         this.GioDen = null;
     }
 
-    public HoaDon(int MaHoaDon, int GiamGia, int TongTien, int TrangThai, int MaBan, Date GioDen) {
+    public HoaDon(int MaHoaDon, int GiamGia, int MaBan, Date GioDen, int TongTien, int TrangThai) {
         this.MaHoaDon = MaHoaDon;
         this.GiamGia = GiamGia;
         this.TongTien = TongTien;
