@@ -20,4 +20,59 @@ public class ThucDon {
     private String MaMon, TenMon, MaLoai, DVT;
     private int DonGia;
 
+    public ThucDon() {
+        this.MaMon = "";
+        this.TenMon = "";
+        this.MaLoai = "";
+        this.DVT = "";
+        this.DonGia = 0;
+    }
+
+    public ThucDon(String MaMon, String TenMon, String MaLoai, String DVT, int DonGia) {
+        this.MaMon = MaMon;
+        this.TenMon = TenMon;
+        this.MaLoai = MaLoai;
+        this.DVT = DVT;
+        this.DonGia = DonGia;
+    }
+
+    public String getMaMon() {
+        return MaMon;
+    }
+
+    public void setMaMon(String maMon) {
+        MaMon = maMon;
+    }
+
+    public String getTenMon() {
+        return TenMon;
+    }
+
+    public void setTenMon(String tenMon) {
+        TenMon = tenMon;
+    }
+
+    public String getMaLoai() {
+        return MaLoai;
+    }
+
+    public void setMaLoai(String maLoai) {
+        MaLoai = maLoai;
+    }
+
+    public String getDVT() {
+        return DVT;
+    }
+
+    public void setDVT(String DVT) {
+        this.DVT = DVT;
+    }
+
+    public int getDonGia() {
+        return DonGia;
+    }
+
+    public void setDonGia(int donGia) {
+        DonGia = donGia;
+    }
 }

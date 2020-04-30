@@ -18,4 +18,39 @@ public class Loai {
 
     private String MaLoai, TenLoai, MauSac;
 
+    public Loai() {
+        this.MaLoai = "";
+        this.TenLoai = "";
+        this.MauSac = "";
+    }
+
+    public Loai(String MaLoai, String TenLoai, String MauSac) {
+        this.MaLoai = MaLoai;
+        this.TenLoai = TenLoai;
+        this.MauSac = MauSac;
+    }
+
+    public String getMaLoai() {
+        return MaLoai;
+    }
+
+    public void setMaLoai(String maLoai) {
+        MaLoai = maLoai;
+    }
+
+    public String getTenLoai() {
+        return TenLoai;
+    }
+
+    public void setTenLoai(String tenLoai) {
+        TenLoai = tenLoai;
+    }
+
+    public String getMauSac() {
+        return MauSac;
+    }
+
+    public void setMauSac(String mauSac) {
+        MauSac = mauSac;
+    }
 }

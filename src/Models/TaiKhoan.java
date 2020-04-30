@@ -20,4 +20,49 @@ public class TaiKhoan {
     private int id, lv;
     private String tdn, mk;
 
+    public TaiKhoan() {
+        this.id = 0;
+        this.lv = 0;
+        this.tdn = "";
+        this.mk = "";
+    }
+
+    public TaiKhoan(int id, int lv, String tdn, String mk) {
+        this.id = id;
+        this.lv = lv;
+        this.tdn = tdn;
+        this.mk = mk;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getLv() {
+        return lv;
+    }
+
+    public void setLv(int lv) {
+        this.lv = lv;
+    }
+
+    public String getTdn() {
+        return tdn;
+    }
+
+    public void setTdn(String tdn) {
+        this.tdn = tdn;
+    }
+
+    public String getMk() {
+        return mk;
+    }
+
+    public void setMk(String mk) {
+        this.mk = mk;
+    }
 }
