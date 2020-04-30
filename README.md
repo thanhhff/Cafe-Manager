@@ -14,11 +14,16 @@
 ```
 
 **Kết nối với MySQL:**
+
+SQL Diagram ([Click Here](https://github.com/thanhhff/Cafe-Manager/blob/master/uml-diagram/Cafe_Manager_DB_diagram.png))
+
 ```
 Bước 1: Cài đặt XAMPP, khởi động sever MySQL.
 Bước 2: Import file `cafe-manager.sql` vào phpMyAdmin với tên database là `cafe-manager`.
 Bước 3: Trong Netbeans khu vực Library import MySQL Connector đã tải xuống ở trên.
 ```
+
+
 
 
  
