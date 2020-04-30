@@ -8,7 +8,7 @@ package Models;
 /**
  * Model DsOrder: chứa cấu trúc về danh sách Order (đặt hàng) trong nhà hàng
  *
- * @author cong.tn
+ * @author thanhhff
  */
 
 //TODO: tạo các method DsOrder() có chữ ký và không có chữ ký;
@@ -19,4 +19,60 @@ public class DsOrder {
     private String TenMon, MaMon, DVT;
     private int Gia, SoLuong, MaHoaDon;
 
+    public DsOrder() {
+        this.TenMon = "";
+        this.MaMon = "";
+        this.DVT = "";
+        this.Gia = 0;
+        this.SoLuong = 0;
+        this.MaHoaDon = 0;
+    }
+
+    public String getTenMon() {
+        return TenMon;
+    }
+
+    public void setTenMon(String tenMon) {
+        TenMon = tenMon;
+    }
+
+    public String getMaMon() {
+        return MaMon;
+    }
+
+    public void setMaMon(String maMon) {
+        MaMon = maMon;
+    }
+
+    public String getDVT() {
+        return DVT;
+    }
+
+    public void setDVT(String DVT) {
+        this.DVT = DVT;
+    }
+
+    public int getGia() {
+        return Gia;
+    }
+
+    public void setGia(int gia) {
+        Gia = gia;
+    }
+
+    public int getSoLuong() {
+        return SoLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        SoLuong = soLuong;
+    }
+
+    public int getMaHoaDon() {
+        return MaHoaDon;
+    }
+
+    public void setMaHoaDon(int maHoaDon) {
+        MaHoaDon = maHoaDon;
+    }
 }
