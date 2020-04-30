@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package Interface;
+
 import MySQL.ConnectSQL;
 
 /**
- *
- * @author thanhhff
+ * @author ???
  */
 public class main {
-    
-    public static void main(String[] args){
-   
-        
+
+    public static void main(String[] args) {
+
+
     }
-    
+
 }
