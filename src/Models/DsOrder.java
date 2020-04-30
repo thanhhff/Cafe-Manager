@@ -8,7 +8,7 @@ package Models;
 /**
  * Model DsOrder: chứa cấu trúc về danh sách Order (đặt hàng) trong nhà hàng
  *
- * @author nam.kd
+ * @author cong.tn
  */
 
 //TODO: tạo các method DsOrder() có chữ ký và không có chữ ký;

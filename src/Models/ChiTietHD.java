@@ -9,7 +9,7 @@ package Models;
  * Model ChiTietHD: chứa cấu trúc về chi tiết hoá đơn trong nhà hàng
  * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author nam.kd
+ * @author cong.tn
  */
 
 //TODO: tạo các method ChiTietHD() có chữ ký và không có chữ ký;
