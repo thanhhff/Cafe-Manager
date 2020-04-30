@@ -28,7 +28,7 @@ public class ThucDon {
         this.DonGia = 0;
     }
 
-    public ThucDon(String MaMon, String TenMon, String MaLoai, String DVT, int DonGia) {
+    public ThucDon(String MaMon, String TenMon, String MaLoai, int DonGia, String DVT) {
         this.MaMon = MaMon;
         this.TenMon = TenMon;
         this.MaLoai = MaLoai;
