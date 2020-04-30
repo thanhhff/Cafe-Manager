@@ -7,7 +7,7 @@ package Models;
 
 /**
  * Model ThucDon: chứa cấu trúc về thực đơn của nhà hàng
- * Tham khảo cấu trúc trong SQL Diagram 
+ * Tham khảo cấu trúc trong SQL Diagram
  *
  * @author thanhhff
  */
