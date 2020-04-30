@@ -27,7 +27,7 @@ public class TaiKhoan {
         this.mk = "";
     }
 
-    public TaiKhoan(int id, int lv, String tdn, String mk) {
+    public TaiKhoan(int id, String tdn, String mk, int lv) {
         this.id = id;
         this.lv = lv;
         this.tdn = tdn;
