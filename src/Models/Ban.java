@@ -6,8 +6,10 @@
 package Models;
 
 /**
- * Model Ban: chứa cấu trúc về bàn trong nhà hàng;
- * @author ???
+ * Model Ban: chứa cấu trúc về bàn trong nhà hàng
+ * Tham khảo cấu trúc trong SQL Diagram
+ *
+ * @author nam.kd
  */
 
 //TODO: tạo các method Ban() có chữ ký và không có chữ ký;
@@ -15,8 +17,7 @@ package Models;
 
 public class Ban {
 
-    private String TenBan, TrangThai;
     private int MaBan;
-    
-    
+    private String TenBan, TrangThai;
+
 }
