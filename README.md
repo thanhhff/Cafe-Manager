@@ -1,10 +1,10 @@
 ## Cafe Manager Project
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-java.svg)](https://www.java.com/)
-
 ### 1. Giới thiệu
 
 ### 2. Hướng dẫn cài đặt môi trường 
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-java.svg)](https://www.java.com/)
 
 **Yêu cầu:**
 ```
