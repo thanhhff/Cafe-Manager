@@ -6,9 +6,19 @@
 package Models;
 
 /**
+ * Model ChiTietHD: chứa cấu trúc về chi tiết hoá đơn trong nhà hàng
+ * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author nam.kd
  */
+
+//TODO: tạo các method ChiTietHD() có chữ ký và không có chữ ký;
+//TODO: hoàn thành các phương thức set / get;
+
 public class ChiTietHD {
-    
+
+    private int MaChiTietHD, MaHoaDon, SoLuong, Gia;
+    private String MaMon;
+
+
 }
