@@ -28,6 +28,15 @@ public class DsOrder {
         this.MaHoaDon = 0;
     }
 
+    public DsOrder(String maMon, String tenMon, String dvt, int soLuong, int gia, int maHoaDon) {
+        this.MaMon = maMon;
+        this.TenMon = tenMon;
+        this.DVT = dvt;
+        this.SoLuong = soLuong;
+        this.Gia = gia;
+        this.MaHoaDon = maHoaDon;
+    }
+
     public String getTenMon() {
         return TenMon;
     }
