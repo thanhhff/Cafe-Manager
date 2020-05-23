@@ -782,6 +782,8 @@ public class ConnectSQL {
         }
         return arrDs;
     }
+    
+    // Interface BanHang 
 
     public ArrayList<ThucDon> GetChiTietMonByMa() {
         ArrayList<ThucDon> arrDs = null;
