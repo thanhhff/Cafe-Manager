@@ -7,6 +7,7 @@ package Interface;
 
 import Models.TaiKhoan;
 import Mysql.ConnectSQL;
+
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.BorderFactory;
@@ -17,6 +18,7 @@ import javax.swing.border.Border;
 
 public class frmLogIn extends javax.swing.JFrame {
     ConnectSQL cn = new ConnectSQL();
+
     /**
      * Creates new form frmLogIn
      */
@@ -58,6 +60,7 @@ public class frmLogIn extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 formMousePressed(evt);
             }
+
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 formMouseReleased(evt);
             }
@@ -106,60 +109,65 @@ public class frmLogIn extends javax.swing.JFrame {
         });
 
         txtMatKhau.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMatKhauActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnDangNhap)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(8, 8, 8)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(btnDangNhap)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel2)
+                                                        .addComponent(jLabel3))
+                                                .addGap(20, 20, 20)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(8, 8, 8)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel1)
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2))
+                                .addGap(15, 15, 15)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel3)
+                                        .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(15, 15, 15)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -167,55 +175,70 @@ public class frmLogIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        int out=JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát khỏi chương trình?","Xác nhận",JOptionPane.YES_NO_OPTION);
-        if(out==0)
-        {
+        int out = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát khỏi chương trình?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (out == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 
     private void txtTenDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenDangNhapActionPerformed
-       
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenDangNhapActionPerformed
+
     private boolean flag;
-    private int x,y;
-    
-    public void thoat(){
+    private int x, y;
+
+    public void thoat() {
         txtMatKhau.setText("");
         txtMatKhau.requestFocus();
     }
+
     private Border lineBorder = BorderFactory.createLineBorder(Color.RED);
     private Border nullBorder = BorderFactory.createLineBorder(Color.BLACK);
-    public void setNullBorder(){
+
+    public void setNullBorder() {
         txtMatKhau.setBorder(nullBorder);
         txtTenDangNhap.setBorder(nullBorder);
     }
+
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
-        String tdn,mk;
+        String tdn, mk;
         tdn = txtTenDangNhap.getText();
         mk = txtMatKhau.getText();
+
         TaiKhoan tk = new TaiKhoan();
-        tk.Settdn(tdn); tk.Setmk(mk);
+        tk.Settdn(tdn);
+        tk.Setmk(mk);
         boolean check = cn.CheckLogin(tk);
         int lv = cn.LVTK(tk);
-        if(tdn.equals("") || mk.equals("")){
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ các trường!","Lỗi",JOptionPane.ERROR_MESSAGE);
+
+        // Kiểm tra đăng nhập
+
+        if (tdn.equals("") && mk.equals("")) {
             setNullBorder();
-            if(tdn.equals(""))
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            setNullBorder();
+            if (tdn.equals(""))
                 txtTenDangNhap.setBorder(lineBorder);
-            if(mk.equals(""))
+            if (mk.equals(""))
                 txtMatKhau.setBorder(lineBorder);
-        }
-        else{
+        } else if (tdn.equals("")) {
             setNullBorder();
-            if(check == true){
-            Run.tk = cn.GetTaiKhoan(tdn, mk);
-            this.setVisible(false);
-            Run.QLCF();
-            }else{
-                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không đúng", "Lỗi đăng nhập", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Vui Lòng nhập tên đăng nhập!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            txtTenDangNhap.setBorder(lineBorder);
+        } else if (mk.equals("")) {
+            setNullBorder();
+            JOptionPane.showMessageDialog(null, "Vui Lòng nhập mật khẩu!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            txtMatKhau.setBorder(lineBorder);
+        } else {
+            setNullBorder();
+            if (check == true) {
+                Run.tk = cn.GetTaiKhoan(tdn, mk);
+                this.setVisible(false);
+                Run.QLCF();
+            } else {
+                JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc Mật khẩu không chính xác.", "Lỗi đăng nhập", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
@@ -233,9 +256,12 @@ public class frmLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
-        flag=false;
+        flag = false;
     }//GEN-LAST:event_formMouseReleased
 
+    private void txtMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMatKhauActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
