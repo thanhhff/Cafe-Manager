@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Interface;
+
 import Interface.BanHang.jpBanHang;
 import Interface.Home.JpHome;
 import Interface.QuanLy.JpQuanLy;
@@ -11,6 +12,7 @@ import Interface.Setting.JpSetting;
 import Models.Ban;
 import Models.TaiKhoan;
 import Mysql.ConnectSQL;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -20,83 +22,93 @@ import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import Interface.ThongKe.JpThongKe;
+
 import java.awt.Image;
 import javax.swing.JRootPane;
 
 
 public final class frmMain extends javax.swing.JFrame {
     ConnectSQL cn = new ConnectSQL();
+
     /**
      * Creates new form frmMain
      */
-    public TaiKhoan loadtaikhoan(String user, String pass){
-       return cn.GetTaiKhoan(user, pass);       
-    }    
+    public TaiKhoan loadtaikhoan(String user, String pass) {
+        return cn.GetTaiKhoan(user, pass);
+    }
+
     public frmMain() {
         initComponents();
         ImageIcon icon = new ImageIcon(getClass().getResource("/Interface/Images/N8+ CAFE.png"));
         Image image = icon.getImage();
         setIconImage(image);
         fill();
-        Clock clock= new Clock(); 
-        clock.start(); 
+        Clock clock = new Clock();
+        clock.start();
         txtqtv.setText(Run.tk.Gettdn());
-        if(Run.tk.GetLv() != 1)
-        {
+        if (Run.tk.GetLv() != 1) {
             btnQuanLy.setEnabled(false);
             btnThongKe.setEnabled(false);
-       }
-        
-       
+        }
+
+
     }
+
     SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-    public class Clock extends Thread{ 
-    public Clock(){    } 
-    @Override
-    public void run(){ 
-        while(true){ 
-            Calendar calendar = Calendar.getInstance();                
-            String str;  
-            str= sdf.format(calendar.getTime()); 
-            lbltime.setText(str); 
-        try{ 
-            sleep(1000); 
-          } catch(Exception e){ 
-             System.out.println(e); 
-            } 
-      } 
+
+    public class Clock extends Thread {
+        public Clock() {
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                Calendar calendar = Calendar.getInstance();
+                String str;
+                str = sdf.format(calendar.getTime());
+                lbltime.setText(str);
+                try {
+                    sleep(1000);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
     }
-    }
-    public void fill(){
+
+    public void fill() {
         home = new JpHome();
         jpLayout.add(home);
         jpLayout.updateUI();
-        mp3 = new MP3 ("src/Sound/openmusic.MP3");
+        mp3 = new MP3("src/Sound/openmusic.MP3");
         mp3.play();
         //btnmute.setVisible(false);
- 
+
         //Khai bao dinh dang ngay thang
-        
-      
+
+
     }
+
     MP3 mp3;
     jpBanHang banhang;
-    JpHome home ;
+    JpHome home;
     JpSetting Set;
     JpQuanLy ql;
-    JpThongKe tk ;
+    JpThongKe tk;
+
     public void reloadPanel(int i) {
         jpLayout.removeAll();
         switch (i) {
             case 1:
                 if (banhang == null) {
                     banhang = new jpBanHang();
-                } 
+                }
                 btnBanHang.setPressedIcon(new ImageIcon("down.png"));
-                mp3 = new MP3 ("src/Sound/kasya.MP3");
+                mp3 = new MP3("src/Sound/kasya.MP3");
                 mp3.play();
                 jpLayout.add(banhang);
                 break;
@@ -105,75 +117,76 @@ public final class frmMain extends javax.swing.JFrame {
                     home = new JpHome();
                 }
                 btnTrangChu.setPressedIcon(new ImageIcon("down.png"));
-                mp3 = new MP3 ("src/Sound/kasya.MP3");
+                mp3 = new MP3("src/Sound/kasya.MP3");
                 mp3.play();
                 jpLayout.add(home);
                 break;
             case 3:
-                if(ql == null){
+                if (ql == null) {
                     ql = new JpQuanLy();
                 }
                 btnQuanLy.setPressedIcon(new ImageIcon("down.png"));
                 jpLayout.add(ql);
-                mp3 = new MP3 ("src/Sound/kasya.MP3");
+                mp3 = new MP3("src/Sound/kasya.MP3");
                 mp3.play();
                 break;
             case 4:
                 tk = new JpThongKe();
-                
+
                 btnThongKe.setPressedIcon(new ImageIcon("down.png"));
                 jpLayout.add(tk);
-                mp3 = new MP3 ("src/Sound/kasya.MP3");
+                mp3 = new MP3("src/Sound/kasya.MP3");
                 mp3.play();
                 break;
             case 6:
                 if (Set == null) {
                     Set = new JpSetting();
-                } 
+                }
                 btnThietLap.setPressedIcon(new ImageIcon("down.png"));
-                mp3 = new MP3 ("src/Sound/kasya.MP3");
+                mp3 = new MP3("src/Sound/kasya.MP3");
                 mp3.play();
                 jpLayout.add(Set);
-                break;                
+                break;
             default:
                 break;
         }
         jpLayout.updateUI();
-    }   
+    }
+
     class MP3 {
-    private Player player;
-    private String filename;
-    
-    public MP3(String filename) {
-        this.filename = filename;
-    }
-    
-    public void stop() {
-        if (player != null)
-            player.close();
-    }
-    
-    public void play() {
-        try {
-            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filename));
-            player = new Player(bis);
-        } catch (FileNotFoundException | JavaLayerException ex) {
-            System.out.println(ex);
+        private Player player;
+        private String filename;
+
+        public MP3(String filename) {
+            this.filename = filename;
         }
-        
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    player.play();
-                } catch (Exception ex) {
-                    System.out.println(ex);
-                }
+
+        public void stop() {
+            if (player != null)
+                player.close();
+        }
+
+        public void play() {
+            try {
+                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filename));
+                player = new Player(bis);
+            } catch (FileNotFoundException | JavaLayerException ex) {
+                System.out.println(ex);
             }
-        }).start();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        player.play();
+                    } catch (Exception ex) {
+                        System.out.println(ex);
+                    }
+                }
+            }).start();
+        }
     }
-}
-        //Lam gi do trong thoi gian phat nhac
+    //Lam gi do trong thoi gian phat nhac
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,9 +230,11 @@ public final class frmMain extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 formMousePressed(evt);
             }
+
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 formMouseReleased(evt);
             }
@@ -316,15 +331,19 @@ public final class frmMain extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTrangChuMouseClicked(evt);
             }
+
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTrangChuMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnTrangChuMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnTrangChuMousePressed(evt);
             }
+
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btnTrangChuMouseReleased(evt);
             }
@@ -350,63 +369,63 @@ public final class frmMain extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jpLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 1254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnTrangChu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnThietLap)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtqtv)
-                        .addGap(57, 57, 57)
-                        .addComponent(lbltime)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnthoat)
-                        .addGap(23, 23, 23))))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jpLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 1254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(btnTrangChu)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnThietLap)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtqtv)
+                                                .addGap(57, 57, 57)
+                                                .addComponent(lbltime)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnthoat)
+                                                .addGap(23, 23, 23))))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnTrangChu)
-                        .addComponent(btnBanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnQuanLy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnThietLap)
-                        .addComponent(jLabel1)
-                        .addComponent(txtqtv)
-                        .addComponent(lbltime))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnthoat, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(btnTrangChu)
+                                                .addComponent(btnBanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnQuanLy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnThietLap)
+                                                .addComponent(jLabel1)
+                                                .addComponent(txtqtv)
+                                                .addComponent(lbltime))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(btnthoat, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jpLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, Short.MAX_VALUE)
         );
 
         pack();
@@ -416,27 +435,26 @@ public final class frmMain extends javax.swing.JFrame {
     private void btnBanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBanHangActionPerformed
         reloadPanel(1);
     }//GEN-LAST:event_btnBanHangActionPerformed
-    public void thoat()
-    {
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE );
-        int kq=JOptionPane.showConfirmDialog(null, "Bạn có muốn đóng phần mềm ?","FBI Warning",JOptionPane.YES_NO_OPTION);
-        if(kq==0)
-        {
-        System.exit(0);
-       }
-}
+
+    public void thoat() {
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        int kq = JOptionPane.showConfirmDialog(null, "Bạn có muốn đóng phần mềm ?", "FBI Warning", JOptionPane.YES_NO_OPTION);
+        if (kq == 0) {
+            System.exit(0);
+        }
+    }
+
     private void btnthoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthoatActionPerformed
         // TODO add your handling code here:
-        int kq=JOptionPane.showConfirmDialog(null, "Đăng xuất khỏi tài khoản " +Run.tk.Gettdn()+ "?","Xác nhận",JOptionPane.YES_NO_OPTION);
-        if(kq==0)
-        {
-            MP3 mp3 = new MP3 ("src/Sound/tyaran.MP3");
+        int kq = JOptionPane.showConfirmDialog(null, "Đăng xuất khỏi tài khoản " + Run.tk.Gettdn() + "?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (kq == 0) {
+            MP3 mp3 = new MP3("src/Sound/tyaran.MP3");
             mp3.play();
             Run.frmlg.setVisible(true);
             Run.frmlg.thoat();
             this.setVisible(false);
         }
-        
+
     }//GEN-LAST:event_btnthoatActionPerformed
 
     private void btnTrangChuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrangChuActionPerformed
@@ -450,7 +468,7 @@ public final class frmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnThietLapActionPerformed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseClicked
 
@@ -462,42 +480,45 @@ public final class frmMain extends javax.swing.JFrame {
 
     private void btnTrangChuFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnTrangChuFocusGained
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_btnTrangChuFocusGained
 
     private void btnTrangChuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangChuMouseClicked
-               // TODO add your handling code here:
-                
+        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnTrangChuMouseClicked
 
     private void btnTrangChuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangChuMouseEntered
-              // TODO add your handling code here:
-               
+        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnTrangChuMouseEntered
 
     private void btnTrangChuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangChuMouseExited
         // TODO add your handling code here:
-         
+
     }//GEN-LAST:event_btnTrangChuMouseExited
 
     private void btnTrangChuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangChuMouseReleased
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_btnTrangChuMouseReleased
 
     private void btnTrangChuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangChuMousePressed
-        
+
     }//GEN-LAST:event_btnTrangChuMousePressed
+
     MP3 nhacnen;
+
     private void btnQuanLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyActionPerformed
         // TODO add your handling code here:
-        
+
         reloadPanel(3);
-        
+
     }//GEN-LAST:event_btnQuanLyActionPerformed
 
     private boolean flag;
-    private int x,y;
+    private int x, y;
+
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         if (flag) {
             this.setLocation(evt.getXOnScreen() - x, evt.getYOnScreen() - y);
@@ -511,7 +532,7 @@ public final class frmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
-        flag=false;
+        flag = false;
     }//GEN-LAST:event_formMouseReleased
 
     /**
