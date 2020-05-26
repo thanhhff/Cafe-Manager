@@ -75,13 +75,11 @@ public final class JpGoiMon extends javax.swing.JPanel {
             return;
 
         }
-        if (lbltrangthai.getText().equals("Da dat truoc")) {
-            lbltrangthai.setText("Đã đặt trước");
+        if (lbltrangthai.getText().equals("Đã đặt trước")) {
             btndatban.setText("Hủy đặt");
             return;
         }
-        if (lbltrangthai.getText().equals("Dang phuc vu")) {
-            lbltrangthai.setText("Đang phục vụ");
+        if (lbltrangthai.getText().equals("Đang phục vụ")) {
             btndatban.setVisible(false);
             btnthugon.setVisible(false);
             jpThucDon thucdon = new jpThucDon();
