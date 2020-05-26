@@ -31,10 +31,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author ANDY
- */
 public final class JpGoiMon extends javax.swing.JPanel {
     String TenBan;
     int MaBan;

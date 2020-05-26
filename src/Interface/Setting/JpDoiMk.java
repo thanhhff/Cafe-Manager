@@ -14,10 +14,6 @@ import javax.swing.JRootPane;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-/**
- *
- * @author ANDY
- */
 public class JpDoiMk extends javax.swing.JPanel {
     ConnectSQL cn = new ConnectSQL();
     /**

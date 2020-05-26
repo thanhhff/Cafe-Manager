@@ -7,11 +7,6 @@ package Models;
 
 import java.util.Date;
 
-
-/**
- *
- * @author ANDY
- */
 public class HoaDon {
     private int MaHoaDon, GiamGia, TongTien, TrangThai ,MaBan;
     private Date GioDen;

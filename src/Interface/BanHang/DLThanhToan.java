@@ -24,10 +24,6 @@ import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.Sides;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
 public class DLThanhToan extends javax.swing.JDialog {
     NumberFormat chuyentien = new DecimalFormat("#,###,###");
     ConnectSQL cn = new ConnectSQL();

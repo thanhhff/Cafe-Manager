@@ -57,7 +57,7 @@
                       </Group>
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="659" max="32767" attributes="0"/>
+                  <EmptySpace pref="597" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,7 +75,7 @@
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="314" max="32767" attributes="0"/>
+                  <EmptySpace pref="301" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

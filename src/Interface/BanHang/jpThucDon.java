@@ -24,10 +24,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author ANDY
- */
 public class jpThucDon extends javax.swing.JPanel {
     ConnectSQL cn = new ConnectSQL();
     /**

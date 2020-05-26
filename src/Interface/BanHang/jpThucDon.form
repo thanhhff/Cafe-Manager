@@ -67,7 +67,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lblNhom" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jpChonMon" pref="400" max="32767" attributes="0"/>
+                  <Component id="jpChonMon" pref="410" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -89,7 +89,7 @@
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="                          Ch&#x1ecd;n m&#xf3;n"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="&#x30c7;&#x30d5;&#x30a9;&#x30eb;&#x30c8;&#x306e;&#x30ab;&#x30fc;&#x30bd;&#x30eb;"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="10"/>
             <Property name="iconTextGap" type="int" value="7"/>

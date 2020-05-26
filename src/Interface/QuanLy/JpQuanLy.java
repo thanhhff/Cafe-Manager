@@ -5,10 +5,6 @@
  */
 package Interface.QuanLy;
 
-/**
- *
- * @author ANDY
- */
 public class JpQuanLy extends javax.swing.JPanel {
 
     /**

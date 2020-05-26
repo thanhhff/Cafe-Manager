@@ -5,10 +5,6 @@
  */
 package Interface.Setting;
 
-/**
- *
- * @author TRUNG HÒA
- */
 public class JpThongTin extends javax.swing.JPanel {
 
     /**

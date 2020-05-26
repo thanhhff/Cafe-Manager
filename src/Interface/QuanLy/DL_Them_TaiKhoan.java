@@ -10,10 +10,6 @@ import Mysql.ConnectSQL;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
 public class DL_Them_TaiKhoan extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     /**

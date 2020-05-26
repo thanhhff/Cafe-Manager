@@ -5,10 +5,6 @@
  */
 package Models;
 
-/**
- *
- * @author ANDY
- */
 public class ThucDon {
     private String MaMon, TenMon, MaLoai, DVT;
     private int DonGia;

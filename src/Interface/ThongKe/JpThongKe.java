@@ -20,10 +20,6 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author ANDY
- */
 public final class JpThongKe extends javax.swing.JPanel {
     ConnectSQL cn = new ConnectSQL();
     /**

@@ -12,10 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
+
 public class DLQl_Sua_Ban extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     /**

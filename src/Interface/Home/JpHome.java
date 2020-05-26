@@ -5,10 +5,6 @@
  */
 package Interface.Home;
 
-/**
- *
- * @author ANDY
- */
 public class JpHome extends javax.swing.JPanel {
 
     /**

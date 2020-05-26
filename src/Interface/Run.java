@@ -2,10 +2,6 @@ package Interface;
 
 import Models.TaiKhoan;
 
-/**
- *
- * @author ANDY
- */
 public class Run {
     public static frmMain QlCafe;
     public static frmLogIn frmlg;
@@ -24,6 +20,4 @@ public class Run {
         QlCafe = new frmMain();
         QlCafe.setVisible(true);       
     }
-   
-   
 }

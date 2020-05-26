@@ -9,10 +9,6 @@ import Models.HoaDon;
 import Mysql.ConnectSQL;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
 public class DLGiamGia extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     private final int mahd;

@@ -5,10 +5,6 @@
  */
 package Models;
 
-/**
- *
- * @author ANDY
- */
 public class DsOrder {
     private String TenMon, MaMon, DVT; 
     private int Gia, SoLuong, MaHoaDon;

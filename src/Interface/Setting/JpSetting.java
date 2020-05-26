@@ -9,10 +9,6 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author ANDY
- */
 public class JpSetting extends javax.swing.JPanel {
 
     /**

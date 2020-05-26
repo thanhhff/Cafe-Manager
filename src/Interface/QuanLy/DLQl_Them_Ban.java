@@ -11,10 +11,6 @@ import Mysql.ConnectSQL;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
 public class DLQl_Them_Ban extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     /**

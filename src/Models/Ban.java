@@ -5,10 +5,6 @@
  */
 package Models;
 
-/**
- *
- * @author ANDY
- */
 public class Ban {
     private String  TenBan, TrangThai;
     private int MaBan;

@@ -15,10 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.border.Border;
 
-/**
- *
- * @author ANDY
- */
 public class frmLogIn extends javax.swing.JFrame {
     ConnectSQL cn = new ConnectSQL();
     /**

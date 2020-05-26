@@ -5,10 +5,7 @@
  */
 package Interface.Setting;
 
-/**
- *
- * @author ANDY
- */
+
 public class JpGiaoDien extends javax.swing.JPanel {
 
     /**

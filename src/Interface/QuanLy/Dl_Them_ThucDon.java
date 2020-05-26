@@ -15,10 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author ANDY
- */
 public class Dl_Them_ThucDon extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     /**

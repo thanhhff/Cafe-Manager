@@ -13,10 +13,6 @@ import Mysql.ConnectSQL;
 import java.util.ArrayList;
 import javax.swing.JRootPane;
 
-/**
- *
- * @author ANDY
- */
 public class DLSoLuong extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     int sl = 0;

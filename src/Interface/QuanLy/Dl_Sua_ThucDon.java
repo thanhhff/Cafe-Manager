@@ -15,10 +15,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author ANDY
- */
 public class Dl_Sua_ThucDon extends javax.swing.JDialog {
     ConnectSQL cn = new ConnectSQL();
     /**

@@ -25,10 +25,8 @@ import javazoom.jl.player.Player;
 import Interface.ThongKe.JpThongKe;
 import java.awt.Image;
 import javax.swing.JRootPane;
-/**
- *
- * @author ANDY
- */
+
+
 public final class frmMain extends javax.swing.JFrame {
     ConnectSQL cn = new ConnectSQL();
     /**

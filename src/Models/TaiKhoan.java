@@ -5,10 +5,6 @@
  */
 package Models;
 
-/**
- *
- * @author ANDY
- */
 public class TaiKhoan {
     private int id, lv;
     private String tdn,mk;

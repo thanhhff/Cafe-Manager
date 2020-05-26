@@ -5,10 +5,6 @@
  */
 package Models;
 
-/**
- *
- * @author ANDY
- */
 public class Loai {
     private String MaLoai, TenLoai, MauSac;
     

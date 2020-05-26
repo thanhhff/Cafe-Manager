@@ -14,10 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author ANDY
- */
 public class Jp_QLNhomMon extends javax.swing.JPanel {
     ConnectSQL cn = new ConnectSQL();
     /**
