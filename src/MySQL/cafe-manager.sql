@@ -1,10 +1,14 @@
--- Hướng dẫn sử dụng cafe-manager.sql kết hợp với Project
--- 1. Tải Xampp tại trang chủ và cài đặt 
--- 2. Kích hoạt Xampp và bật Server SQL 
--- 3. Trong phpMyAdmin thêm CSDL mới 'cafe-manager' 
--- 4. Import file 'cafe-manager.sql' vào CSDL 'cafe-manager'
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 03, 2020 lúc 06:10 PM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -20,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `table` (bàn)
+-- Cấu trúc bảng cho bảng `ban`
 --
 
 CREATE TABLE `ban` (
@@ -30,18 +34,18 @@ CREATE TABLE `ban` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Thêm dữ liệu vào Table 
+-- Đang đổ dữ liệu cho bảng `ban`
 --
 
 INSERT INTO `ban` (`MaBan`, `TenBan`, `TrangThai`) VALUES
 (1, 'Bàn 1', 'Đã đặt trước'),
-(2, 'Bàn 2', 'Đang phục vụ'),
+(2, 'Bàn 2', 'Trống'),
 (3, 'Bàn 3', 'Đang phục vụ'),
 (4, 'Bàn 4', 'Đã đặt trước'),
 (5, 'Bàn 5', 'Trống'),
 (6, 'Bàn 6', 'Trống'),
 (7, 'Bàn 7', 'Trống'),
-(8, 'Bàn 8', 'Đang phục vụ'),
+(8, 'Bàn 8', 'Trống'),
 (9, 'Bàn 9', 'Trống'),
 (10, 'Bàn 10', 'Đang phục vụ'),
 (11, 'Bàn 11', 'Đã đặt trước'),
@@ -55,10 +59,8 @@ INSERT INTO `ban` (`MaBan`, `TenBan`, `TrangThai`) VALUES
 (19, 'Bàn 19', 'Đã đặt trước'),
 (20, 'Bàn 20', 'Đang phục vụ'),
 (21, 'Bàn 21', 'Trống'),
-(22, 'Bàn 22', 'Đã đặt trước'),
+(22, 'Bàn 22', 'Trống'),
 (23, 'Bàn 23', 'Đang phục vụ');
--- (24, 'Bàn 24', 'Đã đặt trước'),
--- (25, 'Bàn 25', 'Trống');
 
 -- --------------------------------------------------------
 
@@ -74,6 +76,29 @@ CREATE TABLE `chitiethd` (
   `Gia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `chitiethd`
+--
+
+INSERT INTO `chitiethd` (`MaChiTietHD`, `MaHoaDon`, `MaMon`, `SoLuong`, `Gia`) VALUES
+(1, 1, 18, 1, 50000),
+(2, 1, 26, 1, 45000),
+(3, 2, 24, 1, 59000),
+(4, 2, 34, 2, 20000),
+(5, 3, 20, 3, 50000),
+(6, 3, 37, 1, 59000),
+(7, 4, 12, 1, 59000),
+(8, 4, 17, 6, 49000),
+(9, 4, 32, 5, 20000),
+(10, 5, 3, 1, 50000),
+(11, 5, 7, 1, 59000),
+(12, 6, 22, 1, 55000),
+(13, 7, 9, 3, 45000),
+(14, 7, 7, 1, 59000),
+(15, 8, 33, 3, 10000),
+(16, 8, 35, 4, 59000),
+(17, 9, 29, 4, 50000),
+(18, 10, 38, 1, 60000);
 
 -- --------------------------------------------------------
 
@@ -89,6 +114,24 @@ CREATE TABLE `hoadon` (
   `TongTien` int(11) DEFAULT NULL,
   `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`MaHoaDon`, `GiamGia`, `MaBan`, `GioDen`, `TongTien`, `TrangThai`) VALUES
+(1, NULL, 7, '2020-05-01 11:09:02', 95000, 1),
+(2, NULL, 8, '2020-05-03 23:05:46', 99000, 1),
+(3, NULL, 18, '2020-05-03 23:06:04', 209000, 1),
+(4, NULL, 12, '2020-05-03 23:06:25', 453000, 1),
+(5, NULL, 12, '2020-05-03 23:06:53', 109000, 1),
+(6, NULL, 8, '2020-05-03 23:07:14', 55000, 1),
+(7, NULL, 2, '2020-05-03 23:07:25', 194000, 1),
+(8, NULL, 22, '2020-05-03 23:09:24', 266000, 1),
+(9, NULL, 14, '2020-05-03 23:09:51', 200000, 1),
+(10, NULL, 12, '2020-05-03 23:10:09', 60000, 1);
+
+-- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `nhommon`
@@ -114,7 +157,6 @@ INSERT INTO `nhommon` (`MaLoai`, `TenLoai`, `MauSac`) VALUES
 (7, 'Thức ăn nhẹ', '#009966'),
 (8, 'Choco-Matcha', '#009999'),
 (9, 'Cà phê gói', '#ff3333');
-
 
 -- --------------------------------------------------------
 
@@ -200,7 +242,6 @@ INSERT INTO `thucdon` (`MaMon`, `TenMon`, `MaLoai`, `DonGia`, `DVT`) VALUES
 (38, 'Cà phê phin TCH Traditional', 9, 60000, 'Gói'),
 (39, 'Cà phê Arabica TCH', 9, 100000, 'Gói');
 
-
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -253,32 +294,38 @@ ALTER TABLE `thucdon`
 -- AUTO_INCREMENT cho bảng `ban`
 --
 ALTER TABLE `ban`
-  MODIFY `MaBan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaBan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT cho bảng `chitiethd`
 --
 ALTER TABLE `chitiethd`
-  MODIFY `MaChiTietHD` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaChiTietHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT cho bảng `nhommon`
 --
 ALTER TABLE `nhommon`
-  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT cho bảng `thucdon`
 --
 ALTER TABLE `thucdon`
-  MODIFY `MaMon` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaMon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
@@ -301,6 +348,7 @@ ALTER TABLE `hoadon`
 --
 ALTER TABLE `thucdon`
   ADD CONSTRAINT `thucdon_ibfk_1` FOREIGN KEY (`MaLoai`) REFERENCES `nhommon` (`MaLoai`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
