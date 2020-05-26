@@ -6,82 +6,59 @@
 package Models;
 
 /**
- * Model DsOrder: chứa cấu trúc về danh sách Order (đặt hàng) trong nhà hàng
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method DsOrder() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class DsOrder {
-
-    private String TenMon, MaMon, DVT;
+    private String TenMon, MaMon, DVT; 
     private int Gia, SoLuong, MaHoaDon;
-
-    public DsOrder() {
-        this.TenMon = "";
-        this.MaMon = "";
-        this.DVT = "";
-        this.Gia = 0;
-        this.SoLuong = 0;
-        this.MaHoaDon = 0;
+    
+    public DsOrder(){
+        TenMon = MaMon = DVT = "";
+        Gia = SoLuong = MaHoaDon = 0;
     }
-
-    public DsOrder(String maMon, String tenMon, String dvt, int soLuong, int gia, int maHoaDon) {
-        this.MaMon = maMon;
-        this.TenMon = tenMon;
-        this.DVT = dvt;
-        this.SoLuong = soLuong;
-        this.Gia = gia;
-        this.MaHoaDon = maHoaDon;
+    public DsOrder(String mamon, String tenmon, String dvt, int soluong, int gia, int mahd){
+        MaMon = mamon;
+        MaHoaDon = mahd;
+        TenMon = tenmon;
+        DVT = dvt;
+        Gia= gia;
+        SoLuong = soluong;
     }
-
-    public String getTenMon() {
-        return TenMon;
+    public void SetMaHD(int mahd){
+        MaHoaDon = mahd;
     }
-
-    public void setTenMon(String tenMon) {
-        TenMon = tenMon;
+    public int GetMaHD(){
+        return MaHoaDon;
+    }    
+    public void SetMaMon(String mamon){
+        this.MaMon=mamon;
     }
-
-    public String getMaMon() {
-        return MaMon;
+    public String GetMaMon(){
+        return this.MaMon;
     }
-
-    public void setMaMon(String maMon) {
-        MaMon = maMon;
+    public void SetTenMon(String ten){
+        this.TenMon=ten;
     }
-
-    public String getDVT() {
-        return DVT;
+    public String GetTenMon(){
+        return this.TenMon;
+    }    
+    public void SetDVT(String dvt){
+        this.DVT=dvt;
     }
-
-    public void setDVT(String DVT) {
-        this.DVT = DVT;
+    public String GetDVT(){
+        return this.DVT;
     }
-
-    public int getGia() {
-        return Gia;
+    public void SetSoLuong(int soluong){
+        SoLuong = soluong;
     }
-
-    public void setGia(int gia) {
-        Gia = gia;
-    }
-
-    public int getSoLuong() {
+    public int GetSoLuong(){
         return SoLuong;
     }
-
-    public void setSoLuong(int soLuong) {
-        SoLuong = soLuong;
+    public void SetGia(int gia){
+        Gia = gia;
     }
-
-    public int getMaHoaDon() {
-        return MaHoaDon;
-    }
-
-    public void setMaHoaDon(int maHoaDon) {
-        MaHoaDon = maHoaDon;
-    }
+    public int GetGia(){
+        return Gia;
+    }    
 }

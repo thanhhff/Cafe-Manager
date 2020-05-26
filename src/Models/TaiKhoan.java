@@ -6,63 +6,55 @@
 package Models;
 
 /**
- * Model TaiKhoan: chứa cấu trúc về tài khoản bao gồm id, lv (quyền truy cập), tên đăng nhập, mật khẩu
- * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method TaiKhoan() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class TaiKhoan {
-
     private int id, lv;
-    private String tdn, mk;
-
-    public TaiKhoan() {
-        this.id = 0;
-        this.lv = 0;
-        this.tdn = "";
-        this.mk = "";
+    private String tdn,mk;
+    public TaiKhoan()
+    {
+        id=lv=0;
+        tdn = "";
+        mk = "";
     }
-
-    public TaiKhoan(int id, String tdn, String mk, int lv) {
-        this.id = id;
-        this.lv = lv;
-        this.tdn = tdn;
-        this.mk = mk;
+    public TaiKhoan(int id,String tdn,String mk,int lv)
+    {
+        this.id=id;
+        this.lv=lv;
+        this.tdn=tdn;
+        this.mk=mk;
     }
-
-    public int getId() {
-        return id;
+    public void SetID(int id)
+    {
+        this.id=id;
     }
-
-    public void setId(int id) {
-        this.id = id;
+    public int GetID()
+    {
+        return this.id;
     }
-
-    public int getLv() {
-        return lv;
+     public void SetLv(int lv)
+    {
+        this.lv=lv;
     }
-
-    public void setLv(int lv) {
-        this.lv = lv;
+    public int GetLv()
+    {
+        return this.lv;
     }
-
-    public String getTdn() {
-        return tdn;
+     public void Settdn(String tdn)
+    {
+        this.tdn=tdn;
     }
-
-    public void setTdn(String tdn) {
-        this.tdn = tdn;
+    public String Gettdn()
+    {
+        return this.tdn;
     }
-
-    public String getMk() {
-        return mk;
+     public void Setmk(String mk)
+    {
+        this.mk=mk;
     }
-
-    public void setMk(String mk) {
-        this.mk = mk;
+    public String Getmk()
+    {
+        return this.mk;
     }
 }

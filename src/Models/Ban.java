@@ -6,54 +6,44 @@
 package Models;
 
 /**
- * Model Ban: chứa cấu trúc về bàn trong nhà hàng
- * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method Ban() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class Ban {
-
+    private String  TenBan, TrangThai;
     private int MaBan;
-    private String TenBan, TrangThai;
-
-    public Ban() {
-        this.MaBan = 0;
-        this.TenBan = "";
-        this.TrangThai = "";
+    
+    public Ban(){
+        this.MaBan =0;
+        this.TenBan ="";
+        this.TrangThai ="";
     }
-
-    public Ban(int maBan, String tenBan, String trangThai) {
-        this.MaBan = maBan;
-        this.TenBan = tenBan;
-        this.TrangThai = trangThai;
+    public Ban(int ma, String ten, String trangthai){
+        this.MaBan =ma;
+        this.TenBan =ten;
+        this.TrangThai =trangthai;
     }
-
-
-    public int getMaBan() {
-        return MaBan;
+    
+    public void SetMaBan(int ma){
+        this.MaBan = ma;
     }
-
-    public void setMaBan(int maBan) {
-        MaBan = maBan;
+    public int GetMaBan(){
+        return this.MaBan;
     }
-
-    public String getTenBan() {
-        return TenBan;
+    public void SetTenBan(String ten){
+        this.TenBan = ten;
     }
-
-    public void setTenBan(String tenBan) {
-        TenBan = tenBan;
+    public String GetTenBan(){
+        return this.TenBan;
     }
-
-    public String getTrangThai() {
-        return TrangThai;
+    public void SetTrangThai(String trangthai){
+        this.TrangThai = trangthai;
     }
-
-    public void setTrangThai(String trangThai) {
-        TrangThai = trangThai;
+    public String GetTrangThai(){
+        return this.TrangThai;
+    }
+    @Override
+    public String toString(){
+        return this.TenBan;
     }
 }

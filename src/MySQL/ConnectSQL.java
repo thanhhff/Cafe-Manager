@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MySQL;
+package Mysql;
 
 import Models.*;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -27,7 +28,7 @@ public class ConnectSQL {
 
     public ConnectSQL() {
         try {
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafe-manager?useUnicode=true&characterEncoding=utf8", "root", "");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlcafe?useUnicode=true&characterEncoding=utf8", "root", "");
             System.out.println("Kết nối SQL thành công !");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Lỗi ConnectSQL: kết nối tới SQL thất bại !");
@@ -64,7 +65,7 @@ public class ConnectSQL {
 
     public int UpdateBan(Ban b) {
         int update = 0;
-        String sql = "UPDATE ban SET TenBan = '" + b.getTenBan() + "', TrangThai = '" + b.getTrangThai() + "' WHERE MaBan = '" + b.getMaBan() + "'";
+        String sql = "UPDATE ban SET TenBan = '" + b.GetTenBan() + "', TrangThai = '" + b.GetTrangThai() + "' WHERE MaBan = '" + b.GetMaBan() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -76,7 +77,7 @@ public class ConnectSQL {
 
     public int UpDateTrangThaiBan(Ban b) {
         int update = 0;
-        String sql = "UPDATE ban SET TrangThai = '" + b.getTrangThai() + "' WHERE MaBan = '" + b.getMaBan() + "'";
+        String sql = "UPDATE ban SET TrangThai = '" + b.GetTrangThai() + "' WHERE MaBan = '" + b.GetMaBan() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -88,7 +89,7 @@ public class ConnectSQL {
 
     public int InsertBan(Ban b) {
         int insert = 0;
-        String sql = "Insert into ban (TenBan, TrangThai) values ('" + b.getTenBan() + "', '" + b.getTrangThai() + "')";
+        String sql = "Insert into ban (TenBan, TrangThai) values ('" + b.GetTenBan() + "', '" + b.GetTrangThai() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -135,10 +136,10 @@ public class ConnectSQL {
     /**
      * 2. ChiTietHD
      * <p>
-     * public ChiTietHD(int maChiTietHD, int maHoaDon, int maMon, int soLuong, int gia)
+     * public ChiTietHD(int maChiTietHD, int maHoaDon, String maMon, int soLuong, int gia)
      */
 
-    public ChiTietHD GetDsChiTiet(int mamon, int maban) {
+    public ChiTietHD GetDsChiTiet(String mamon, int maban) {
         ChiTietHD arrDs = null;
         String sql;
 
@@ -148,9 +149,9 @@ public class ConnectSQL {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 arrDs = new ChiTietHD();
-                arrDs.setSoLuong(rs.getInt(1));
-                arrDs.setGia(rs.getInt(2));
-                arrDs.setMaChiTietHD(rs.getInt(3));
+                arrDs.SetSoLuong(rs.getInt(1));
+                arrDs.SetGia(rs.getInt(2));
+                arrDs.SetMaChiTietHD(rs.getInt(3));
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Lỗi GetDSChiTiet: không lấy được danh sách Order !");
@@ -160,7 +161,7 @@ public class ConnectSQL {
 
     public int UpdateChiTiet(ChiTietHD ct) {
         int update = 0;
-        String sql = "UPDATE chitiethd SET SoLuong = '" + ct.getSoLuong() + "', Gia = '" + ct.getGia() + "' WHERE MaChiTietHD = '" + ct.getMaChiTietHD() + "'";
+        String sql = "UPDATE chitiethd SET SoLuong = '" + ct.GetSoLuong() + "', Gia = '" + ct.GetGia() + "' WHERE MaChiTietHD = '" + ct.GetMaChiTietHD() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -186,7 +187,7 @@ public class ConnectSQL {
         return dem;
     }
 
-    public int DeleteMon(int mamon, int mahd, int maban) {
+    public int DeleteMon(String mamon, int mahd, int maban) {
         int check = 0;
         try {
             String sql;
@@ -205,7 +206,7 @@ public class ConnectSQL {
 
     public int InsertChiTietHD(ChiTietHD cthd) {
         int insert = 0;
-        String sql = "Insert into chitiethd (MaChiTietHD, MaHoaDon, MaMon, SoLuong, Gia) values ('" + cthd.getMaChiTietHD() + "', '" + cthd.getMaHoaDon() + "', '" + cthd.getMaMon() + "', '" + cthd.getSoLuong() + "', '" + cthd.getGia() + "')";
+        String sql = "Insert into chitiethd (MaChiTietHD, MaHoaDon, MaMon, SoLuong, Gia) values ('" + cthd.GetMaChiTietHD() + "', '" + cthd.GetMaHD() + "', '" + cthd.GetMaMon() + "', '" + cthd.GetSoLuong() + "', '" + cthd.GetGia() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -270,7 +271,7 @@ public class ConnectSQL {
 
     public int ThanhToan(HoaDon hd) {
         int update = 0;
-        String sql = "UPDATE hoadon SET TongTien = '" + hd.getTongTien() + "', TrangThai = 1 WHERE MaHoaDon = '" + hd.getMaHoaDon() + "'";
+        String sql = "UPDATE hoadon SET TongTien = '" + hd.GetTongTien() + "', TrangThai = 1 WHERE MaHoaDon = '" + hd.GetMaHD() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -282,7 +283,7 @@ public class ConnectSQL {
 
     public int HuyHD(HoaDon hd) {
         int update = 0;
-        String sql = "Delete From hoadon WHERE MaHoaDon = '" + hd.getMaHoaDon() + "'";
+        String sql = "Delete From hoadon WHERE MaHoaDon = '" + hd.GetMaHD() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -294,7 +295,7 @@ public class ConnectSQL {
 
     public int InsertHoaDon(HoaDon hd, String gio) {
         int insert = 0;
-        String sql = "Insert into hoadon (MaBan, GioDen, TrangThai) values ('" + hd.getMaBan() + "', '" + gio + "', '" + hd.getTrangThai() + "')";
+        String sql = "Insert into hoadon (MaBan, GioDen, TrangThai) values ('" + hd.GetMaBan() + "', '" + gio + "', '" + hd.GetTrangThai() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -337,7 +338,7 @@ public class ConnectSQL {
 
     public int UpdateHD(HoaDon hd) {
         int update = 0;
-        String sql = "UPDATE hoadon SET GiamGia = '" + hd.getGiamGia() + "' WHERE MaHoaDon = '" + hd.getMaHoaDon() + "'";
+        String sql = "UPDATE hoadon SET GiamGia = '" + hd.GetGiamGia() + "' WHERE MaHoaDon = '" + hd.GetMaHD() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -379,10 +380,10 @@ public class ConnectSQL {
             arrDs = new ArrayList<DsOrder>();
             while (rs.next()) {
                 DsOrder order = new DsOrder();
-                order.setGia(rs.getInt(1));
-                order.setSoLuong(rs.getInt(2));
-                order.setTenMon(rs.getString(3));
-                order.setDVT(rs.getString(4));
+                order.SetGia(rs.getInt(1));
+                order.SetSoLuong(rs.getInt(2));
+                order.SetTenMon(rs.getString(3));
+                order.SetDVT(rs.getString(4));
                 arrDs.add(order);
             }
         } catch (SQLException ex) {
@@ -433,7 +434,7 @@ public class ConnectSQL {
 
     public int InsertLoai(Loai b) {
         int insert = 0;
-        String sql = "Insert into nhommon (TenLoai, MauSac) values ('" + b.getTenLoai() + "', '" + b.getMauSac() + "')";
+        String sql = "Insert into nhommon (TenLoai, MauSac) values ('" + b.GetTenLoai() + "', '" + b.GetMauSac() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -476,7 +477,7 @@ public class ConnectSQL {
 
     public int UpdateLoai(Loai b) {
         int update = 0;
-        String sql = "UPDATE nhommon SET TenLoai = '" + b.getTenLoai() + "', MauSac = '" + b.getMauSac() + "' WHERE MaLoai = '" + b.getMaLoai() + "'";
+        String sql = "UPDATE nhommon SET TenLoai = '" + b.GetTenLoai() + "', MauSac = '" + b.GetMauSac() + "' WHERE MaLoai = '" + b.GetMaLoai() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -513,7 +514,7 @@ public class ConnectSQL {
     public boolean CheckLogin(TaiKhoan tk) {
         boolean check = false;
         String sql;
-        sql = "Select * From taikhoan Where username = '" + tk.getTdn() + "' AND password='" + tk.getMk() + "'";
+        sql = "Select * From taikhoan Where username = '" + tk.Gettdn() + "' AND password='" + tk.Getmk() + "'";
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -530,7 +531,7 @@ public class ConnectSQL {
     public int LVTK(TaiKhoan tk) {
         int lvtk = 0;
         String sql;
-        sql = "Select lv From taikhoan Where username = '" + tk.getTdn() + "' AND password='" + tk.getMk() + "'";
+        sql = "Select lv From taikhoan Where username = '" + tk.Gettdn() + "' AND password='" + tk.Getmk() + "'";
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -563,7 +564,7 @@ public class ConnectSQL {
 
     public int InserTK(TaiKhoan b) {
         int insert = 0;
-        String sql = "Insert into taikhoan (username, password, lv) values ('" + b.getTdn() + "', '" + b.getMk() + "', '" + b.getLv() + "')";
+        String sql = "Insert into taikhoan (username, password, lv) values ('" + b.Gettdn() + "', '" + b.Getmk() + "', '" + b.GetLv() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -626,7 +627,7 @@ public class ConnectSQL {
 
     public int UpdateTK(TaiKhoan b) {
         int update = 0;
-        String sql = "UPDATE taikhoan SET username = '" + b.getTdn() + "', password = '" + b.getMk() + "', lv = '" + b.getLv() + "' WHERE id = '" + b.getId() + "'";
+        String sql = "UPDATE taikhoan SET username = '" + b.Gettdn() + "', password = '" + b.Getmk() + "', lv = '" + b.GetLv() + "' WHERE id = '" + b.GetID() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -706,7 +707,7 @@ public class ConnectSQL {
 
     public int InsertThucDon(ThucDon td) {
         int insert = 0;
-        String sql = "Insert into thucdon (TenMon, MaLoai, DonGia, DVT) values ('" + td.getTenMon() + "', '" + td.getMaLoai() + "', '" + td.getDonGia() + "', '" + td.getDVT() + "')";
+        String sql = "Insert into thucdon (TenMon, MaLoai, DonGia, DVT) values ('" + td.GetTenMon() + "', '" + td.GetMaLoai() + "', '" + td.GetDonGia() + "', '" + td.GetDVT() + "')";
         try {
             Statement st = connect.createStatement();
             insert = st.executeUpdate(sql);
@@ -734,7 +735,7 @@ public class ConnectSQL {
 
     public int UpdateThucDon(ThucDon td) {
         int update = 0;
-        String sql = "UPDATE thucdon SET TenMon = '" + td.getTenMon() + "', MaLoai = '" + td.getMaLoai() + "', DonGia = '" + td.getDonGia() + "', DVT = '" + td.getDVT() + "' WHERE MaMon = '" + td.getMaMon() + "'";
+        String sql = "UPDATE thucdon SET TenMon = '" + td.GetTenMon() + "', MaLoai = '" + td.GetMaLoai() + "', DonGia = '" + td.GetDonGia() + "', DVT = '" + td.GetDVT() + "' WHERE MaMon = '" + td.GetTenMon() + "'";
         try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
@@ -772,9 +773,9 @@ public class ConnectSQL {
             arrDs = new ArrayList<ThucDon>();
             while (rs.next()) {
                 ThucDon order = new ThucDon();
-                order.setTenMon(rs.getString(1));
-                order.setMaMon(rs.getString(2));
-                order.setDVT(rs.getString(3));
+                order.SetTenMon(rs.getString(1));
+                order.SetMaMon(rs.getString(2));
+                order.SetDVT(rs.getString(3));
                 arrDs.add(order);
             }
         } catch (SQLException ex) {
@@ -782,7 +783,7 @@ public class ConnectSQL {
         }
         return arrDs;
     }
-    
+
     // Interface BanHang 
 
     public ArrayList<ThucDon> GetChiTietMonByMa() {
@@ -795,9 +796,9 @@ public class ConnectSQL {
             arrDs = new ArrayList<ThucDon>();
             while (rs.next()) {
                 ThucDon order = new ThucDon();
-                order.setTenMon(rs.getString(1));
-                order.setMaMon(rs.getString(2));
-                order.setDVT(rs.getString(3));
+                order.SetTenMon(rs.getString(1));
+                order.SetMaMon(rs.getString(2));
+                order.SetDVT(rs.getString(3));
                 arrDs.add(order);
             }
         } catch (SQLException ex) {
@@ -823,10 +824,10 @@ public class ConnectSQL {
             while (rs.next()) {
 
                 DsOrder order = new DsOrder();
-                order.setGia(rs.getInt(1));
-                order.setSoLuong(rs.getInt(2));
-                order.setTenMon(rs.getString(3));
-                order.setDVT(rs.getString(4));
+                order.SetGia(rs.getInt(1));
+                order.SetSoLuong(rs.getInt(2));
+                order.SetTenMon(rs.getString(3));
+                order.SetDVT(rs.getString(4));
                 arrDs.add(order);
             }
         } catch (SQLException ex) {

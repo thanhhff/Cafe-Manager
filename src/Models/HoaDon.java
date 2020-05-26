@@ -7,84 +7,67 @@ package Models;
 
 import java.util.Date;
 
+
 /**
- * Model HoaDon: chứa cấu trúc về danh sách hoá đơn trong nhà hàng
- * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method HoaDon() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class HoaDon {
-
-    private int MaHoaDon, GiamGia, TongTien, TrangThai, MaBan;
+    private int MaHoaDon, GiamGia, TongTien, TrangThai ,MaBan;
     private Date GioDen;
-
-    public HoaDon() {
-        this.MaHoaDon = 0;
-        this.GiamGia = 0;
-        this.TongTien = 0;
-        this.TrangThai = 0;
-        this.MaBan = 0;
-        this.GioDen = null;
+    
+    public HoaDon(){
+        this.MaHoaDon =0;
+        this.GiamGia =0;
+        this.TongTien =0;
+        TrangThai =0;
+        MaBan = 0;
+        GioDen=null;
     }
-
-    public HoaDon(int MaHoaDon, int GiamGia, int MaBan, Date GioDen, int TongTien, int TrangThai) {
-        this.MaHoaDon = MaHoaDon;
-        this.GiamGia = GiamGia;
-        this.TongTien = TongTien;
-        this.TrangThai = TrangThai;
-        this.MaBan = MaBan;
-        this.GioDen = GioDen;
+     public HoaDon(int mahoadon, int giamgia, int maban, Date gioden, int tongtien, int trangthai){
+        this.MaHoaDon =mahoadon;
+        this.GiamGia =giamgia;
+        this.TongTien =tongtien;
+        TrangThai =trangthai;
+        MaBan =maban;
+        GioDen=gioden;
+    } 
+     
+    public void SetMaHD(int ma){
+        MaHoaDon = ma;
     }
-
-    public int getMaHoaDon() {
+    public int GetMaHD(){
         return MaHoaDon;
     }
-
-    public void setMaHoaDon(int maHoaDon) {
-        MaHoaDon = maHoaDon;
+    public void SetGiamGia(int giamgia){
+        GiamGia = giamgia;
     }
-
-    public int getGiamGia() {
+    public int GetGiamGia(){
         return GiamGia;
     }
-
-    public void setGiamGia(int giamGia) {
-        GiamGia = giamGia;
+    public void SetMaBan(int maban){
+        MaBan = maban;
     }
-
-    public int getTongTien() {
-        return TongTien;
-    }
-
-    public void setTongTien(int tongTien) {
-        TongTien = tongTien;
-    }
-
-    public int getTrangThai() {
-        return TrangThai;
-    }
-
-    public void setTrangThai(int trangThai) {
-        TrangThai = trangThai;
-    }
-
-    public int getMaBan() {
+    public int GetMaBan(){
         return MaBan;
     }
-
-    public void setMaBan(int maBan) {
-        MaBan = maBan;
+    public void SetGioDen(Date gioden){
+        GioDen = gioden;
     }
-
-    public Date getGioDen() {
+    public Date GetGioDen(){
         return GioDen;
     }
-
-    public void setGioDen(Date gioDen) {
-        GioDen = gioDen;
+    public void SetTongTien(int tongtien){
+        TongTien = tongtien;
     }
+    public int GetTongTien(){
+        return TongTien;
+    }
+    public void SetTrangThai(int trangThai){
+        TrangThai = trangThai;
+    }
+    public int GetTrangThai(){
+        return TrangThai;
+    }
+    
 }

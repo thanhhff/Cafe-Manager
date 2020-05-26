@@ -6,73 +6,58 @@
 package Models;
 
 /**
- * Model ThucDon: chứa cấu trúc về thực đơn của nhà hàng
- * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method ThucDon() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class ThucDon {
-
     private String MaMon, TenMon, MaLoai, DVT;
     private int DonGia;
-
-    public ThucDon() {
-        this.MaMon = "";
-        this.TenMon = "";
-        this.MaLoai = "";
-        this.DVT = "";
-        this.DonGia = 0;
+    
+    public ThucDon(){
+        this.MaMon="";
+        this.TenMon="";
+        this.MaLoai="";
+        this.DVT="";
+        this.DonGia=0;
     }
-
-    public ThucDon(String MaMon, String TenMon, String MaLoai, int DonGia, String DVT) {
-        this.MaMon = MaMon;
-        this.TenMon = TenMon;
-        this.MaLoai = MaLoai;
-        this.DVT = DVT;
-        this.DonGia = DonGia;
+    public ThucDon(String mamon, String ten, String maloai, int gia, String dvt){
+        this.MaMon=mamon;
+        this.TenMon=ten;
+        this.MaLoai=maloai;
+        this.DVT=dvt;
+        this.DonGia=gia;       
     }
-
-    public String getMaMon() {
-        return MaMon;
+    
+    public void SetMaMon(String mamon){
+        this.MaMon=mamon;
     }
-
-    public void setMaMon(String maMon) {
-        MaMon = maMon;
+    public String GetMaMon(){
+        return this.MaMon;
     }
-
-    public String getTenMon() {
-        return TenMon;
+    public void SetTenMon(String ten){
+        this.TenMon=ten;
     }
-
-    public void setTenMon(String tenMon) {
-        TenMon = tenMon;
+    public String GetTenMon(){
+        return this.TenMon;
     }
-
-    public String getMaLoai() {
-        return MaLoai;
+    public void SetMaLoai(String maloai){
+        this.MaLoai=maloai;
     }
-
-    public void setMaLoai(String maLoai) {
-        MaLoai = maLoai;
+    public String GetMaLoai(){
+        return this.MaLoai;
     }
-
-    public String getDVT() {
-        return DVT;
+    public void SetDonGia(int gia){
+        this.DonGia=gia;
     }
-
-    public void setDVT(String DVT) {
-        this.DVT = DVT;
+    public int GetDonGia(){
+        return this.DonGia;
     }
-
-    public int getDonGia() {
-        return DonGia;
+    public void SetDVT(String dvt){
+        this.DVT=dvt;
     }
-
-    public void setDonGia(int donGia) {
-        DonGia = donGia;
+    public String GetDVT(){
+        return this.DVT;
     }
+    
+    
 }

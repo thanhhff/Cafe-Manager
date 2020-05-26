@@ -6,72 +6,55 @@
 package Models;
 
 /**
- * Model ChiTietHD: chứa cấu trúc về chi tiết hoá đơn trong nhà hàng
- * Tham khảo cấu trúc trong SQL Diagram
  *
- * @author thanhhff
+ * @author ANDY
  */
-
-//TODO: tạo các method ChiTietHD() có chữ ký và không có chữ ký;
-//TODO: hoàn thành các phương thức set / get;
-
 public class ChiTietHD {
-
-    private int MaChiTietHD, MaHoaDon, SoLuong, Gia, MaMon;
-
-    public ChiTietHD() {
-        this.MaChiTietHD = 0;
-        this.MaHoaDon = 0;
-        this.SoLuong = 0;
-        this.Gia = 0;
-        this.MaMon = 0;
+    private int MaChiTietHD, MaHoaDon, SoLuong, Gia;
+    private String MaMon;
+    
+    public ChiTietHD(){
+        MaMon = "";
+        MaChiTietHD =0;
+        MaHoaDon =0;
+        SoLuong =0;
+        Gia = 0;
     }
-
-    public ChiTietHD(int maChiTietHD, int maHoaDon, int maMon, int soLuong, int gia) {
-        this.MaHoaDon = maChiTietHD;
-        this.MaHoaDon = maHoaDon;
-        this.SoLuong = soLuong;
-        this.Gia = gia;
-        this.MaMon = maMon;
-    }
-
-    public int getMaChiTietHD() {
-        return MaChiTietHD;
-    }
-
-    public void setMaChiTietHD(int maChiTietHD) {
-        MaChiTietHD = maChiTietHD;
-    }
-
-    public int getMaHoaDon() {
-        return MaHoaDon;
-    }
-
-    public void setMaHoaDon(int maHoaDon) {
-        MaHoaDon = maHoaDon;
-    }
-
-    public int getSoLuong() {
-        return SoLuong;
-    }
-
-    public void setSoLuong(int soLuong) {
-        SoLuong = soLuong;
-    }
-
-    public int getGia() {
-        return Gia;
-    }
-
-    public void setGia(int gia) {
+    public ChiTietHD(int machitiet, int mahoadon, String mamon, int soluong, int gia){
+        MaMon = mamon;
+        MaChiTietHD =machitiet;
+        MaHoaDon =mahoadon;
+        SoLuong =soluong;
         Gia = gia;
     }
-
-    public int getMaMon() {
+    public void SetMaChiTietHD(int machitiet){
+        MaChiTietHD = machitiet;
+    }
+    public int GetMaChiTietHD(){
+        return MaChiTietHD;
+    }
+    public void SetMaHD(int ma){
+        MaHoaDon = ma;
+    }
+    public int GetMaHD(){
+        return MaHoaDon;
+    }
+    public void SetMaMon(String mamon){
+        MaMon = mamon;
+    }
+    public String GetMaMon(){
         return MaMon;
     }
-
-    public void setMaMon(int maMon) {
-        MaMon = maMon;
+    public void SetSoLuong(int soluong){
+        SoLuong = soluong;
     }
+    public int GetSoLuong(){
+        return SoLuong;
+    }
+    public void SetGia(int gia){
+        Gia = gia;
+    }
+    public int GetGia(){
+        return Gia;
+    }    
 }
