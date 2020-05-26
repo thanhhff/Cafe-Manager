@@ -9,6 +9,7 @@ import Interface.BanHang.jpThucDon;
 import Interface.Run;
 import Models.Loai;
 import Mysql.ConnectSQL;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
@@ -20,11 +21,13 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
      * Creates new form Jp_QLNhomMon
      */
     public static Jp_QLNhomMon nhom;
+
     public Jp_QLNhomMon() {
         initComponents();
         nhom = this;
         FillTable();
     }
+
     public void FillTable() {
         ArrayList<Loai> arrTable = cn.GetLoai();
         DefaultTableModel tbmodel = new DefaultTableModel();
@@ -37,18 +40,19 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             int soloai = 0;
             for (Loai l : arrTable) {
                 soloai++;
-                tbmodel.addRow(new Object[]{l.GetMaLoai(), l.GetTenLoai(),l.GetMauSac()});
+                tbmodel.addRow(new Object[]{l.GetMaLoai(), l.GetTenLoai(), l.GetMauSac()});
             }
-            lblthongtin.setText(String.valueOf(soloai)+" loại");
+            lblthongtin.setText(String.valueOf(soloai) + " loại");
         } else {
             JOptionPane.showMessageDialog(null, "Không có loại nào");
         }
         tbNhomMon.setModel(tbmodel);
-        for(int i = 0; i < tbNhomMon.getColumnCount();i++){
+        for (int i = 0; i < tbNhomMon.getColumnCount(); i++) {
             Class<?> col = tbNhomMon.getColumnClass(i);
             tbNhomMon.setDefaultEditor(col, null);
-        }        
+        }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,23 +78,23 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         tbNhomMon.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
-            }
+                new Object[][]{
+                        {null, null, null, null, null},
+                        {null, null, null, null, null},
+                        {null, null, null, null, null},
+                        {null, null, null, null, null},
+                        {null, null, null, null, null}
+                },
+                new String[]{
+                        "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+                }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+            boolean[] canEdit = new boolean[]{
+                    false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         tbNhomMon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,55 +165,55 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bntThem, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bntSua, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bntXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(38, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(309, 309, 309)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblthongtin)
-                        .addGap(18, 261, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txttim, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(30, 30, 30)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(bntThem, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(bntSua, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(bntXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addContainerGap(38, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(309, 309, 309)
+                                                .addComponent(jLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(lblthongtin)
+                                                .addGap(18, 261, Short.MAX_VALUE))))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(77, 77, 77)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txttim, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txttim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bntThem, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bntSua, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bntXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(lblthongtin)))
-                .addGap(182, 182, 182))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(27, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel1)
+                                        .addComponent(txttim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(bntThem, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(bntSua, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(bntXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel2)
+                                                .addComponent(lblthongtin)))
+                                .addGap(182, 182, 182))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -223,12 +227,12 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
     }//GEN-LAST:event_bntThemActionPerformed
 
     private void bntSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSuaActionPerformed
-        int select=tbNhomMon.getSelectedRow();
-        if(select<0){
+        int select = tbNhomMon.getSelectedRow();
+        if (select < 0) {
             JOptionPane.showMessageDialog(null, "Bạn chưa chọn nhóm nào !");
-        }else{
+        } else {
             String manhom = (String) tbNhomMon.getValueAt(select, 0);
-            
+
             DLQl_Sua_Nhom sua = new DLQl_Sua_Nhom(Run.QlCafe, true, manhom);
             sua.setVisible(true);
         }
@@ -258,17 +262,17 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
 
                 if (xoa == true) {
                     FillTable();
-                    try{
+                    try {
                         Jp_QLThucDon.td.Fillcbb();
                         Jp_QLThucDon.td.FillTable(null);
                         Jp_QLThucDon.td.updateUI();
                         jpThucDon.td.FillLoai();
                         jpThucDon.td.updateUI();
-                    }catch(Exception e){
+                    } catch (Exception e) {
 
                     }
-                }else
-                JOptionPane.showMessageDialog(null, "Không xóa được loại !");
+                } else
+                    JOptionPane.showMessageDialog(null, "Không xóa được loại !");
 
             }
         }
@@ -276,7 +280,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
 
     private void txttimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttimKeyReleased
         ArrayList<Loai> arrTable = cn.SearchLoai(txttim.getText());
-        if(arrTable != null){
+        if (arrTable != null) {
             DefaultTableModel tbmodel = new DefaultTableModel();
 
             tbmodel.addColumn("Mã loại");
@@ -286,10 +290,10 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             int soloai = 0;
             for (Loai l : arrTable) {
                 soloai++;
-                tbmodel.addRow(new Object[]{l.GetMaLoai(), l.GetTenLoai(),l.GetMauSac()});
+                tbmodel.addRow(new Object[]{l.GetMaLoai(), l.GetTenLoai(), l.GetMauSac()});
             }
             tbNhomMon.setModel(tbmodel);
-            for(int i = 0; i < tbNhomMon.getColumnCount();i++){
+            for (int i = 0; i < tbNhomMon.getColumnCount(); i++) {
                 Class<?> col = tbNhomMon.getColumnClass(i);
                 tbNhomMon.setDefaultEditor(col, null);
             }

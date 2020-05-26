@@ -7,50 +7,50 @@ package Models;
 
 public class TaiKhoan {
     private int id, lv;
-    private String tdn,mk;
-    public TaiKhoan()
-    {
-        id=lv=0;
+    private String tdn, mk;
+
+    public TaiKhoan() {
+        id = lv = 0;
         tdn = "";
         mk = "";
     }
-    public TaiKhoan(int id,String tdn,String mk,int lv)
-    {
-        this.id=id;
-        this.lv=lv;
-        this.tdn=tdn;
-        this.mk=mk;
+
+    public TaiKhoan(int id, String tdn, String mk, int lv) {
+        this.id = id;
+        this.lv = lv;
+        this.tdn = tdn;
+        this.mk = mk;
     }
-    public void SetID(int id)
-    {
-        this.id=id;
+
+    public void SetID(int id) {
+        this.id = id;
     }
-    public int GetID()
-    {
+
+    public int GetID() {
         return this.id;
     }
-     public void SetLv(int lv)
-    {
-        this.lv=lv;
+
+    public void SetLv(int lv) {
+        this.lv = lv;
     }
-    public int GetLv()
-    {
+
+    public int GetLv() {
         return this.lv;
     }
-     public void Settdn(String tdn)
-    {
-        this.tdn=tdn;
+
+    public void Settdn(String tdn) {
+        this.tdn = tdn;
     }
-    public String Gettdn()
-    {
+
+    public String Gettdn() {
         return this.tdn;
     }
-     public void Setmk(String mk)
-    {
-        this.mk=mk;
+
+    public void Setmk(String mk) {
+        this.mk = mk;
     }
-    public String Getmk()
-    {
+
+    public String Getmk() {
         return this.mk;
     }
 }

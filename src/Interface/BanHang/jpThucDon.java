@@ -9,6 +9,7 @@ import Interface.Run;
 import Models.Loai;
 import Models.ThucDon;
 import Mysql.ConnectSQL;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -34,69 +35,71 @@ public class jpThucDon extends javax.swing.JPanel {
     public ArrayList<ThucDon> arrdsmon;
     NumberFormat chuyentien = new DecimalFormat("#,###,###");
     public static jpThucDon td;
-    public void FillLoai(){
+
+    public void FillLoai() {
         ArrayList<Loai> arrLoai = cn.GetLoai();
-        if(arrLoai != null){
+        if (arrLoai != null) {
             JButton btn;
             jpLoai.setLayout(new BoxLayout(jpLoai, BoxLayout.PAGE_AXIS));
             jpLoai.removeAll();
-            jpChonMon.setLayout(new  FlowLayout(FlowLayout.CENTER));
-            for(Loai l : arrLoai){
-                    btn = new JButton(l.GetTenLoai());
-                    btn.setName(l.GetMaLoai());
-                    btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                    btn.setMaximumSize(new Dimension(140, 40));
-                    btn.setForeground(Color.decode("#331a00"));
-                    btn.setBackground(Color.decode(l.GetMauSac()));
-                    btn.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
-                    btn.addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mousePressed(MouseEvent e) {
-                            lblNhom.setText("    Nhóm "+l.GetTenLoai());
-                            lblNhom.setBackground(Color.decode(l.GetMauSac()));
-                            ArrayList<ThucDon> arrThucDon = cn.GetThucDon(l.GetMaLoai());
-                            jpChonMon.removeAll();
-                            jpChonMon.updateUI();
-                            if(arrThucDon != null){
-                                JPanel[] pn = new JPanel[arrThucDon.size()];
-                                //jPanel4.setLayout(new BoxLayout(jPanel4, BoxLayout.PAGE_AXIS));
-                                for(int i=0;i<arrThucDon.size();i++){
-                                    pn[i] = new JPanel();
-                                    pn[i].setName(arrThucDon.get(i).GetMaMon());
-                                    pn[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
-                                    pn[i].setBackground(Color.decode("#dfff80"));
-                                    pn[i].setBorder(BorderFactory.createLineBorder(Color.decode("#a3a375"), 2));
-                                    pn[i].setPreferredSize(new Dimension(128, 60));
-                                    pn[i].add(new JLabel(arrThucDon.get(i).GetTenMon())).setFont(new java.awt.Font("Tahoma", 1, 12));
-                                    pn[i].add(new JLabel(String.valueOf(chuyentien.format(arrThucDon.get(i).GetDonGia()))+" VNĐ/ "+arrThucDon.get(i).GetDVT())).setForeground(Color.decode("#ff0000"));
-                                    pn[i].addMouseListener(new MouseAdapter() {
-                                        @Override
-                                        public void mousePressed(MouseEvent e){
+            jpChonMon.setLayout(new FlowLayout(FlowLayout.CENTER));
+            for (Loai l : arrLoai) {
+                btn = new JButton(l.GetTenLoai());
+                btn.setName(l.GetMaLoai());
+                btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                btn.setMaximumSize(new Dimension(140, 40));
+                btn.setForeground(Color.decode("#331a00"));
+                btn.setBackground(Color.decode(l.GetMauSac()));
+                btn.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
+                btn.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+                        lblNhom.setText("    Nhóm " + l.GetTenLoai());
+                        lblNhom.setBackground(Color.decode(l.GetMauSac()));
+                        ArrayList<ThucDon> arrThucDon = cn.GetThucDon(l.GetMaLoai());
+                        jpChonMon.removeAll();
+                        jpChonMon.updateUI();
+                        if (arrThucDon != null) {
+                            JPanel[] pn = new JPanel[arrThucDon.size()];
+                            //jPanel4.setLayout(new BoxLayout(jPanel4, BoxLayout.PAGE_AXIS));
+                            for (int i = 0; i < arrThucDon.size(); i++) {
+                                pn[i] = new JPanel();
+                                pn[i].setName(arrThucDon.get(i).GetMaMon());
+                                pn[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
+                                pn[i].setBackground(Color.decode("#dfff80"));
+                                pn[i].setBorder(BorderFactory.createLineBorder(Color.decode("#a3a375"), 2));
+                                pn[i].setPreferredSize(new Dimension(128, 60));
+                                pn[i].add(new JLabel(arrThucDon.get(i).GetTenMon())).setFont(new java.awt.Font("Tahoma", 1, 12));
+                                pn[i].add(new JLabel(String.valueOf(chuyentien.format(arrThucDon.get(i).GetDonGia())) + " VNĐ/ " + arrThucDon.get(i).GetDVT())).setForeground(Color.decode("#ff0000"));
+                                pn[i].addMouseListener(new MouseAdapter() {
+                                    @Override
+                                    public void mousePressed(MouseEvent e) {
 
-                                            DLSoLuong sl = new DLSoLuong(Run.QlCafe, true, e.getComponent().getName(), tenban, maban);
-                                            sl.gioden = gioden;
-                                            sl.setVisible(true);
-                                        }
-                                    });                                     
-                                    jpChonMon.add(pn[i]);
-                                    jpChonMon.updateUI();
-                                }
+                                        DLSoLuong sl = new DLSoLuong(Run.QlCafe, true, e.getComponent().getName(), tenban, maban);
+                                        sl.gioden = gioden;
+                                        sl.setVisible(true);
+                                    }
+                                });
+                                jpChonMon.add(pn[i]);
+                                jpChonMon.updateUI();
                             }
-
                         }
-                    });
-                    jpLoai.add(btn);
-                    jpLoai.updateUI();
+
+                    }
+                });
+                jpLoai.add(btn);
+                jpLoai.updateUI();
             }
-            
+
         }
 
     }
+
     public jpThucDon() {
         initComponents();
         td = this;
         FillLoai();
-        
+
     }
 
 
@@ -139,18 +142,18 @@ public class jpThucDon extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         jpChonMon.setBackground(new java.awt.Color(255, 255, 255));
@@ -160,30 +163,30 @@ public class jpThucDon extends javax.swing.JPanel {
         javax.swing.GroupLayout jpChonMonLayout = new javax.swing.GroupLayout(jpChonMon);
         jpChonMon.setLayout(jpChonMonLayout);
         jpChonMonLayout.setHorizontalGroup(
-            jpChonMonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
+                jpChonMonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 297, Short.MAX_VALUE)
         );
         jpChonMonLayout.setVerticalGroup(
-            jpChonMonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+                jpChonMonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblNhom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpChonMon, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblNhom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpChonMon, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblNhom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpChonMon, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNhom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jpChonMon, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jpLoai.setBackground(new java.awt.Color(255, 255, 255));
@@ -192,20 +195,20 @@ public class jpThucDon extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jpLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jpLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jpLoai, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
-                .addGap(143, 143, 143))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jpLoai, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                                .addGap(143, 143, 143))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
