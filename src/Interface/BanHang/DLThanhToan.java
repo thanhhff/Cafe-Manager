@@ -234,7 +234,7 @@ public class DLThanhToan extends javax.swing.JDialog {
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
 
 
-        System.out.println("toi day");
+        System.out.println("Thanh toán thành công!");
         Ban b = new Ban();
         b.SetTrangThai("Trống");
         b.SetMaBan(MaBan);
