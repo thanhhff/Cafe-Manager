@@ -58,19 +58,23 @@
                     btn[i].setName(String.valueOf(arrBan.get(i).GetMaBan()));
                     String[] mb = arrBan.get(i).GetTenBan().split(" ");
                     btn[i].setText(mb[1]);
-                    btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/ico-Table.png")));
-                    Border thickBorder = new LineBorder(Color.WHITE, 8);
-                    btn[i].setBorder(thickBorder);
-                    btn[i].setBackground(Color.decode("#8080ff"));
+                    btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/green-table.png")));
+//                    btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/ico-Table.png")));
+
+                      // Tạo thinkBorder 
+//                    Border thickBorder = new LineBorder(Color.WHITE, 8);
+//                    btn[i].setBorder(thickBorder);
+//                    btn[i].setBackground(Color.decode("#8080ff"));
                     //btn[i].setBackground(Color.GREEN);
                     btn[i].setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
                     btn[i].setForeground(new java.awt.Color(51, 51, 51));
                     if (arrBan.get(i).GetTrangThai().equals("Đang phục vụ")) {
-                        btn[i].setBackground(Color.decode("#66ff66"));
+                        btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/red-table.png"))); 
+//                        btn[i].setBackground(Color.decode("#66ff66"));
                     }
                     if (arrBan.get(i).GetTrangThai().equals("Đã đặt trước")) {
-
-                        btn[i].setBackground(Color.decode("#ff6699"));
+                          btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/blue-table.png"))); 
+//                        btn[i].setBackground(Color.decode("#ff6699"));
                         //btn[i].setBackground(Color.GREEN);
                     }
                     btn[i].setPreferredSize(new Dimension(90, 70));
