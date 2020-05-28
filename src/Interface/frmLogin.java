@@ -24,7 +24,7 @@ public class frmLogIn extends javax.swing.JFrame {
      */
     public frmLogIn() {
         initComponents();
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Interface/Images/N8+ CAFE.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Interface/Images/logo.png"));
         Image image = icon.getImage();
         setIconImage(image);
         JRootPane rp = this.getRootPane();
@@ -186,7 +186,7 @@ public class frmLogIn extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txtTenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtTenDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTenDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(114, 79, 43)));
         txtTenDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTenDangNhapActionPerformed(evt);
@@ -195,7 +195,7 @@ public class frmLogIn extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/Main Banner.png"))); // NOI18N
 
-        btnDangNhap.setBackground(new java.awt.Color(153, 102, 0));
+        btnDangNhap.setBackground(new java.awt.Color(114, 79, 43));
         btnDangNhap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
         btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/login.png"))); // NOI18N
@@ -207,14 +207,14 @@ public class frmLogIn extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Tên đăng nhập");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Mật khẩu");
 
-        btnThoat.setBackground(new java.awt.Color(153, 102, 0));
+        btnThoat.setBackground(new java.awt.Color(114, 79, 43));
         btnThoat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnThoat.setForeground(new java.awt.Color(255, 255, 255));
         btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/out.png"))); // NOI18N
@@ -226,7 +226,7 @@ public class frmLogIn extends javax.swing.JFrame {
         });
 
         txtMatKhau.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtMatKhau.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        txtMatKhau.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(114, 79, 43), 1, true));
         txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMatKhauActionPerformed(evt);
@@ -234,7 +234,7 @@ public class frmLogIn extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tiza Negra", 1, 60)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel4.setForeground(new java.awt.Color(114, 79, 43));
         jLabel4.setText("Login");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -242,7 +242,7 @@ public class frmLogIn extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
