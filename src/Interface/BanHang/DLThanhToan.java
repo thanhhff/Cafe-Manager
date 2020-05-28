@@ -93,11 +93,11 @@ public class DLThanhToan extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
 
         lblTongTien.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblTongTien.setForeground(new java.awt.Color(220, 33, 33));
+        lblTongTien.setForeground(new java.awt.Color(114, 79, 43));
         lblTongTien.setText("....");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel4.setForeground(new java.awt.Color(114, 79, 43));
         jLabel4.setText("Tiền thừa:");
 
         txtTienDua.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class DLThanhToan extends javax.swing.JDialog {
             }
         });
 
-        btnHuy.setBackground(new java.awt.Color(0, 40, 50));
+        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy bỏ");
@@ -122,18 +122,18 @@ public class DLThanhToan extends javax.swing.JDialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setForeground(new java.awt.Color(56, 25, 15));
         jLabel1.setText("Hoá đơn thanh toán");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Số tiền khách đưa:");
 
         lbltienthoi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbltienthoi.setForeground(new java.awt.Color(209, 20, 20));
+        lbltienthoi.setForeground(new java.awt.Color(114, 79, 43));
         lbltienthoi.setText("....");
 
-        btnXacNhan.setBackground(new java.awt.Color(0, 40, 50));
+        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -144,7 +144,7 @@ public class DLThanhToan extends javax.swing.JDialog {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Số tiền cần thanh toán:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

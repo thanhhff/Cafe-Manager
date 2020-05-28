@@ -83,9 +83,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -97,7 +97,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
           </Properties>
 
@@ -120,7 +120,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ph&#x1ea7;n m&#x1ec1;m &#x111;&#x1b0;&#x1ee3;c ph&#xe1;t tri&#x1ec3;n b&#x1edf;i TNNC Group"/>
           </Properties>
@@ -131,7 +131,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Copyright &#xa9; 2020 tnncgroup.com. All rights reserved "/>
           </Properties>
@@ -162,7 +162,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ng&#x1b0;&#x1edd;i th&#x1ef1;c hi&#x1ec7;n: TNNC Group"/>
           </Properties>

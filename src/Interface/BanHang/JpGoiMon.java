@@ -135,29 +135,29 @@ public final class JpGoiMon extends javax.swing.JPanel {
         jpThongTinBan.setAutoscrolls(true);
 
         lblTenBan.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblTenBan.setForeground(new java.awt.Color(0, 40, 50));
+        lblTenBan.setForeground(new java.awt.Color(56, 25, 15));
         lblTenBan.setText("Bàn 1");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Giờ đến:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Trạng thái:");
 
         lblgioden.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblgioden.setForeground(new java.awt.Color(0, 40, 50));
+        lblgioden.setForeground(new java.awt.Color(114, 79, 43));
         lblgioden.setText(".....");
 
         lbltrangthai.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbltrangthai.setForeground(new java.awt.Color(0, 40, 50));
+        lbltrangthai.setForeground(new java.awt.Color(114, 79, 43));
         lbltrangthai.setText("....");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 15, 2));
 
-        btndatban.setBackground(new java.awt.Color(0, 40, 50));
+        btndatban.setBackground(new java.awt.Color(56, 25, 15));
         btndatban.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btndatban.setForeground(new java.awt.Color(255, 255, 255));
         btndatban.setText("Đặt chỗ");
@@ -170,7 +170,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
         });
         jPanel1.add(btndatban);
 
-        btngoi.setBackground(new java.awt.Color(0, 40, 50));
+        btngoi.setBackground(new java.awt.Color(56, 25, 15));
         btngoi.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btngoi.setForeground(new java.awt.Color(255, 255, 255));
         btngoi.setText("Gọi món");
@@ -200,19 +200,19 @@ public final class JpGoiMon extends javax.swing.JPanel {
         lbltongtien.setText("0");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel8.setForeground(new java.awt.Color(114, 79, 43));
         jLabel8.setText("Giảm giá:");
 
         lblgiamgia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblgiamgia.setForeground(new java.awt.Color(0, 40, 50));
+        lblgiamgia.setForeground(new java.awt.Color(114, 79, 43));
         lblgiamgia.setText("0");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel7.setForeground(new java.awt.Color(114, 79, 43));
         jLabel7.setText("Tiền món:");
 
         lbltienmon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lbltienmon.setForeground(new java.awt.Color(0, 40, 50));
+        lbltienmon.setForeground(new java.awt.Color(114, 79, 43));
         lbltienmon.setText("0");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -262,7 +262,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnthugon.setBackground(new java.awt.Color(0, 40, 50));
+        btnthugon.setBackground(new java.awt.Color(56, 25, 15));
         btnthugon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnthugon.setForeground(new java.awt.Color(255, 255, 255));
         btnthugon.setText("<<");

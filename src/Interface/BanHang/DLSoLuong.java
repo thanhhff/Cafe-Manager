@@ -108,10 +108,11 @@ public class DLSoLuong extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 40, 50)));
 
         lblTenMon.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTenMon.setForeground(new java.awt.Color(0, 40, 50));
+        lblTenMon.setForeground(new java.awt.Color(56, 25, 15));
         lblTenMon.setText("Cà phê sữa");
 
         lblDVT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblDVT.setForeground(new java.awt.Color(114, 79, 43));
         lblDVT.setText("Ly");
 
         txtSl.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -120,7 +121,7 @@ public class DLSoLuong extends javax.swing.JDialog {
             }
         });
 
-        btnXacNhan.setBackground(new java.awt.Color(0, 40, 50));
+        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Đồng ý");
@@ -130,7 +131,7 @@ public class DLSoLuong extends javax.swing.JDialog {
             }
         });
 
-        btnHuy.setBackground(new java.awt.Color(0, 40, 50));
+        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy");
@@ -141,6 +142,7 @@ public class DLSoLuong extends javax.swing.JDialog {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(56, 25, 15));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/tru(-).png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +152,7 @@ public class DLSoLuong extends javax.swing.JDialog {
         });
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(56, 25, 15));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/Cong(+).png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -159,15 +162,15 @@ public class DLSoLuong extends javax.swing.JDialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setForeground(new java.awt.Color(114, 79, 43));
         jLabel1.setText("Số lượng:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Đơn giá:");
 
         lblban.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        lblban.setForeground(new java.awt.Color(0, 40, 50));
+        lblban.setForeground(new java.awt.Color(56, 25, 15));
         lblban.setText("Bàn1");
 
         txtgia.addKeyListener(new java.awt.event.KeyAdapter() {

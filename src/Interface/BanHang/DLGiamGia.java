@@ -73,17 +73,18 @@ public class DLGiamGia extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 40, 50)));
 
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("%");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setForeground(new java.awt.Color(56, 25, 15));
         jLabel1.setText("Bàn 3 - Giảm giá");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Giảm giá:");
 
-        btnXacNhan.setBackground(new java.awt.Color(0, 40, 50));
+        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -106,7 +107,7 @@ public class DLGiamGia extends javax.swing.JDialog {
             }
         });
 
-        btnHuy.setBackground(new java.awt.Color(0, 40, 50));
+        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy bỏ");

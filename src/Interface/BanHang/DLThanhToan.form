@@ -137,7 +137,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="21" green="21" red="dc" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="...."/>
           </Properties>
@@ -148,7 +148,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ti&#x1ec1;n th&#x1eeb;a:"/>
           </Properties>
@@ -162,7 +162,7 @@
         <Component class="javax.swing.JButton" name="btnHuy">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -182,7 +182,7 @@
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ho&#xe1; &#x111;&#x1a1;n thanh to&#xe1;n"/>
           </Properties>
@@ -193,7 +193,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ed1; ti&#x1ec1;n kh&#xe1;ch &#x111;&#x1b0;a:"/>
           </Properties>
@@ -204,7 +204,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="14" green="14" red="d1" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="...."/>
           </Properties>
@@ -212,7 +212,7 @@
         <Component class="javax.swing.JButton" name="btnXacNhan">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -232,7 +232,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ed1; ti&#x1ec1;n c&#x1ea7;n thanh to&#xe1;n:"/>
           </Properties>

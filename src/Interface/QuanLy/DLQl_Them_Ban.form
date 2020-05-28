@@ -43,6 +43,9 @@
             </LineBorder>
           </Border>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f" green="19" red="38" type="rgb"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -98,7 +101,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="2b" green="4f" red="72" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="T&#xea;n b&#xe0;n: "/>
           </Properties>
@@ -109,7 +112,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Th&#xea;m b&#xe0;n m&#x1edb;i"/>
           </Properties>
@@ -117,7 +120,7 @@
         <Component class="javax.swing.JButton" name="btnHuy">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -139,7 +142,7 @@
         <Component class="javax.swing.JButton" name="btnXacNhan">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="32" green="28" red="0" type="rgb"/>
+              <Color blue="f" green="19" red="38" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>

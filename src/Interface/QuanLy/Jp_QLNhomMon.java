@@ -102,7 +102,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbNhomMon);
 
-        bntThem.setBackground(new java.awt.Color(0, 40, 50));
+        bntThem.setBackground(new java.awt.Color(56, 25, 15));
         bntThem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntThem.setForeground(new java.awt.Color(255, 255, 255));
         bntThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/add.png"))); // NOI18N
@@ -114,7 +114,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             }
         });
 
-        bntSua.setBackground(new java.awt.Color(0, 40, 50));
+        bntSua.setBackground(new java.awt.Color(56, 25, 15));
         bntSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntSua.setForeground(new java.awt.Color(255, 255, 255));
         bntSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/edit.png"))); // NOI18N
@@ -126,7 +126,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             }
         });
 
-        bntXoa.setBackground(new java.awt.Color(0, 40, 50));
+        bntXoa.setBackground(new java.awt.Color(56, 25, 15));
         bntXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntXoa.setForeground(new java.awt.Color(255, 255, 255));
         bntXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/delete.png"))); // NOI18N
@@ -139,7 +139,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Quản lý Loại món");
 
         lblthongtin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -147,11 +147,11 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         lblthongtin.setText("Total");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Tổng số loại:");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setForeground(new java.awt.Color(114, 79, 43));
         jLabel1.setText("Tìm loại:");
 
         txttim.addKeyListener(new java.awt.event.KeyAdapter() {

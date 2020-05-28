@@ -101,7 +101,7 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        bntXoa.setBackground(new java.awt.Color(0, 40, 50));
+        bntXoa.setBackground(new java.awt.Color(56, 25, 15));
         bntXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntXoa.setForeground(new java.awt.Color(255, 255, 255));
         bntXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/delete.png"))); // NOI18N
@@ -143,10 +143,10 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tbBan);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setForeground(new java.awt.Color(114, 79, 43));
         jLabel1.setText("Nhóm món:");
 
-        bntThem.setBackground(new java.awt.Color(0, 40, 50));
+        bntThem.setBackground(new java.awt.Color(56, 25, 15));
         bntThem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntThem.setForeground(new java.awt.Color(255, 255, 255));
         bntThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/add.png"))); // NOI18N
@@ -171,10 +171,10 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
         lblthongtin.setText("Total");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel2.setForeground(new java.awt.Color(114, 79, 43));
         jLabel2.setText("Tổng số món:");
 
-        bntSuaMon.setBackground(new java.awt.Color(0, 40, 50));
+        bntSuaMon.setBackground(new java.awt.Color(56, 25, 15));
         bntSuaMon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntSuaMon.setForeground(new java.awt.Color(255, 255, 255));
         bntSuaMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/edit.png"))); // NOI18N
@@ -188,7 +188,7 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Quản lý thực đơn");
 
         txttim.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -198,7 +198,7 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel4.setForeground(new java.awt.Color(114, 79, 43));
         jLabel4.setText("Tìm món:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

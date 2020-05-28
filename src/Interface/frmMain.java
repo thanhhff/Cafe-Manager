@@ -241,7 +241,7 @@ public final class frmMain extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1280, 600));
 
-        btnThietLap.setBackground(new java.awt.Color(0, 40, 50));
+        btnThietLap.setBackground(new java.awt.Color(56, 25, 15));
         btnThietLap.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnThietLap.setForeground(new java.awt.Color(255, 255, 255));
         btnThietLap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/setting.png"))); // NOI18N
@@ -253,7 +253,7 @@ public final class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnQuanLy.setBackground(new java.awt.Color(0, 40, 50));
+        btnQuanLy.setBackground(new java.awt.Color(56, 25, 15));
         btnQuanLy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnQuanLy.setForeground(new java.awt.Color(255, 255, 255));
         btnQuanLy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/manage.png"))); // NOI18N
@@ -266,7 +266,7 @@ public final class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnBanHang.setBackground(new java.awt.Color(0, 40, 50));
+        btnBanHang.setBackground(new java.awt.Color(56, 25, 15));
         btnBanHang.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnBanHang.setForeground(new java.awt.Color(255, 255, 255));
         btnBanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/sell.png"))); // NOI18N
@@ -282,7 +282,7 @@ public final class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnThongKe.setBackground(new java.awt.Color(0, 40, 50));
+        btnThongKe.setBackground(new java.awt.Color(56, 25, 15));
         btnThongKe.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnThongKe.setForeground(new java.awt.Color(255, 255, 255));
         btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/statistics.png"))); // NOI18N
@@ -297,7 +297,7 @@ public final class frmMain extends javax.swing.JFrame {
         jpLayout.setBackground(new java.awt.Color(255, 255, 255));
         jpLayout.setLayout(new java.awt.BorderLayout());
 
-        btnthoat.setBackground(new java.awt.Color(0, 40, 50));
+        btnthoat.setBackground(new java.awt.Color(56, 25, 15));
         btnthoat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnthoat.setForeground(new java.awt.Color(255, 255, 255));
         btnthoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/out.png"))); // NOI18N
@@ -311,7 +311,7 @@ public final class frmMain extends javax.swing.JFrame {
             }
         });
 
-        btnTrangChu.setBackground(new java.awt.Color(0, 40, 50));
+        btnTrangChu.setBackground(new java.awt.Color(56, 25, 15));
         btnTrangChu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTrangChu.setForeground(new java.awt.Color(255, 255, 255));
         btnTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/HOME.png"))); // NOI18N
@@ -348,15 +348,15 @@ public final class frmMain extends javax.swing.JFrame {
         });
 
         lbltime.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lbltime.setForeground(new java.awt.Color(0, 40, 50));
+        lbltime.setForeground(new java.awt.Color(56, 25, 15));
         lbltime.setText("Thời gian");
 
         txtqtv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtqtv.setForeground(new java.awt.Color(0, 40, 50));
+        txtqtv.setForeground(new java.awt.Color(56, 25, 15));
         txtqtv.setText("Tên tài khoản");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(56, 25, 15));
         jLabel1.setText("Xin chào:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -377,12 +377,12 @@ public final class frmMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnThietLap)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtqtv)
                         .addGap(57, 57, 57)
                         .addComponent(lbltime)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(btnthoat)
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
