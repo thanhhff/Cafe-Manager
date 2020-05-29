@@ -66,8 +66,11 @@
                     btn[i].setBorder(thickBorder);
 //                    btn[i].setBackground(Color.decode("#8080ff"));
                     btn[i].setBackground(Color.WHITE);
-                    btn[i].setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-                    btn[i].setForeground(new java.awt.Color(51, 51, 51));
+                    btn[i].setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+                    // 724F2B[114,79,43]
+//                    btn[i].setForeground(new java.awt.Color(51, 51, 51));
+                    btn[i].setForeground(new java.awt.Color(114, 79, 43));
+
                     if (arrBan.get(i).GetTrangThai().equals("Đang phục vụ")) {
                         btn[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/red-table.png"))); 
 //                        btn[i].setBackground(Color.decode("#66ff66"));
@@ -135,17 +138,17 @@
         jpBan.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/green-table.png"))); // NOI18N
         jLabel3.setText("Trống");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel4.setForeground(new java.awt.Color(114, 79, 43));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/red-table.png"))); // NOI18N
         jLabel4.setText("Đang phục vụ");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 40, 50));
+        jLabel5.setForeground(new java.awt.Color(114, 79, 43));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/blue-table.png"))); // NOI18N
         jLabel5.setText("Đã đặt trước");
 
