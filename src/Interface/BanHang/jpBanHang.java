@@ -65,7 +65,7 @@
                     Border thickBorder = new LineBorder(Color.WHITE, 8);
                     btn[i].setBorder(thickBorder);
 //                    btn[i].setBackground(Color.decode("#8080ff"));
-//                    btn[i].setBackground(Color.GREEN);
+                    btn[i].setBackground(Color.WHITE);
                     btn[i].setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
                     btn[i].setForeground(new java.awt.Color(51, 51, 51));
                     if (arrBan.get(i).GetTrangThai().equals("Đang phục vụ")) {
