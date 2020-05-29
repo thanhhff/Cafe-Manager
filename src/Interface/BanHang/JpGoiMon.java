@@ -184,7 +184,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
         jPanel1.add(btngoi);
 
         jSeparator1.setBackground(Color.decode("#e6e6e6"));
-        jSeparator1.setForeground(new java.awt.Color(0, 40, 50));
+        jSeparator1.setForeground(new java.awt.Color(114, 79, 43));
 
         jpThongTinThanhToan.setBackground(new java.awt.Color(255, 255, 255));
         jpThongTinThanhToan.setAutoscrolls(true);
@@ -228,16 +228,17 @@ public final class JpGoiMon extends javax.swing.JPanel {
                 .addGroup(jpThongTinThanhToanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpThongTinThanhToanLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
+                        .addGroup(jpThongTinThanhToanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jpThongTinThanhToanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpThongTinThanhToanLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblgiamgia, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                                .addComponent(lbltienmon, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                                .addGap(17, 17, 17))
                             .addGroup(jpThongTinThanhToanLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbltienmon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(23, 23, 23))
+                                .addComponent(lblgiamgia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(23, 23, 23))))
                     .addGroup(jpThongTinThanhToanLayout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -332,7 +333,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
             .addGroup(jpThongTinBanLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(lblTenBan)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addGroup(jpThongTinBanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblgioden))
@@ -340,9 +341,9 @@ public final class JpGoiMon extends javax.swing.JPanel {
                 .addGroup(jpThongTinBanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lbltrangthai))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jpThongTinThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
