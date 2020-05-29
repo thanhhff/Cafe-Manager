@@ -33,6 +33,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public final class JpGoiMon extends javax.swing.JPanel {
+
     String TenBan;
     int MaBan;
     int MaHD, tienmon = 0, tongtien = 0;
