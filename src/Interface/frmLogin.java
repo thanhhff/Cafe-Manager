@@ -10,6 +10,7 @@ import Mysql.ConnectSQL;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -17,6 +18,7 @@ import javax.swing.JRootPane;
 import javax.swing.border.Border;
 
 public class frmLogIn extends javax.swing.JFrame {
+
     ConnectSQL cn = new ConnectSQL();
 
     /**
@@ -192,6 +194,11 @@ public class frmLogIn extends javax.swing.JFrame {
                 txtTenDangNhapActionPerformed(evt);
             }
         });
+        txtTenDangNhap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTenDangNhapKeyPressed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/Main Banner.png"))); // NOI18N
 
@@ -230,6 +237,11 @@ public class frmLogIn extends javax.swing.JFrame {
         txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMatKhauActionPerformed(evt);
+            }
+        });
+        txtMatKhau.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMatKhauKeyPressed(evt);
             }
         });
 
@@ -350,8 +362,7 @@ public class frmLogIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        // TODO add your handling code here:
+    public void dangNhapaction() {
         String tdn, mk;
         tdn = txtTenDangNhap.getText();
         mk = txtMatKhau.getText();
@@ -363,15 +374,16 @@ public class frmLogIn extends javax.swing.JFrame {
         int lv = cn.LVTK(tk);
 
         // Kiểm tra đăng nhập
-
         if (tdn.equals("") && mk.equals("")) {
             setNullBorder();
             JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!", "Lỗi", JOptionPane.ERROR_MESSAGE);
             setNullBorder();
-            if (tdn.equals(""))
-            txtTenDangNhap.setBorder(lineBorder);
-            if (mk.equals(""))
-            txtMatKhau.setBorder(lineBorder);
+            if (tdn.equals("")) {
+                txtTenDangNhap.setBorder(lineBorder);
+            }
+            if (mk.equals("")) {
+                txtMatKhau.setBorder(lineBorder);
+            }
         } else if (tdn.equals("")) {
             setNullBorder();
             JOptionPane.showMessageDialog(null, "Vui Lòng nhập tên đăng nhập!", "Lỗi", JOptionPane.ERROR_MESSAGE);
@@ -390,6 +402,11 @@ public class frmLogIn extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc Mật khẩu không chính xác.", "Lỗi đăng nhập", JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+
+        dangNhapaction();
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void txtTenDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenDangNhapActionPerformed
@@ -411,6 +428,20 @@ public class frmLogIn extends javax.swing.JFrame {
     private void txtMatKhau1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhau1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMatKhau1ActionPerformed
+
+    private void txtMatKhauKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMatKhauKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            dangNhapaction();
+        }
+    }//GEN-LAST:event_txtMatKhauKeyPressed
+
+    private void txtTenDangNhapKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTenDangNhapKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            dangNhapaction();
+        }
+    }//GEN-LAST:event_txtTenDangNhapKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
