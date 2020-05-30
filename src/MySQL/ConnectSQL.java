@@ -319,7 +319,21 @@ public class ConnectSQL {
         }
         return arrhd;
     }
-
+    public HoaDon GetHDbyMa(int ma){
+        String sql;
+        HoaDon arrhd = null;
+        sql = "Select * From hoadon Where MaHoaDon = "+ma;
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                arrhd = new HoaDon(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getTimestamp(4), rs.getInt(5), rs.getInt(6));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Lỗi GetHDbyMaBan: Không lấy được danh sách hóa đơn !");
+        }
+        return arrhd;
+    }
     public int GetMaHD(int ma) {
         String sql;
         int mahd = 0;
@@ -347,7 +361,8 @@ public class ConnectSQL {
         }
         return update;
     }
-
+    
+    
     public ArrayList<HoaDon> GetDSHD() {
         ArrayList<HoaDon> arrDs = null;
         String sql;
