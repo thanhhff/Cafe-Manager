@@ -11,7 +11,6 @@ import Models.HoaDon;
 import Mysql.ConnectSQL;
 import com.itextpdf.text.BaseColor;
 
-
 import javax.swing.*;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -28,7 +27,7 @@ import javax.print.attribute.standard.Sides;
 import javax.swing.JRootPane;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
- 
+
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -40,13 +39,14 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.Rectangle;
-import com.itextpdf.text.pdf.PdfPTable; 
+import com.itextpdf.text.pdf.PdfPTable;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class DLThanhToan extends javax.swing.JDialog {
+
     NumberFormat chuyentien = new DecimalFormat("#,###,###");
     ConnectSQL cn = new ConnectSQL();
     /**
@@ -245,14 +245,11 @@ public class DLThanhToan extends javax.swing.JDialog {
     private void txtTienDuaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTienDuaKeyReleased
         try {
             int tiendua = Integer.parseInt(txtTienDua.getText());
-            if (txtTienDua.getText().equals(""))
-            {
+            if (txtTienDua.getText().equals("")) {
                 lbltienthoi.setText("....");
-            }
-            else if (tiendua - tong >= 0)
+            } else if (tiendua - tong >= 0) {
                 lbltienthoi.setText(String.valueOf(chuyentien.format(tiendua - tong)) + " VNĐ");
-            else
-            {
+            } else {
                 lbltienthoi.setText("....");
             }
         } catch (Exception e) {
@@ -276,7 +273,7 @@ public class DLThanhToan extends javax.swing.JDialog {
             hd.SetTongTien(tong);
             hd.SetMaHD(MaHD);
             cn.ThanhToan(hd);
-            
+
             jpBanHang.bh.FillBan();
             JpGoiMon.gm.removeAll();
             jpBanHang.bh.fillLb();
@@ -284,160 +281,156 @@ public class DLThanhToan extends javax.swing.JDialog {
             //In hoa don
             Document document = new Document();
             NumberFormat chuyentien = new DecimalFormat("#,###,###");
-      try
-      {
-         PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\hoa_don_ma_"+MaHD+".pdf"));
-        
-         document.open();
-         BaseFont bf = BaseFont.createFont("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-         Font font = new Font(bf,12);
-         Font font1 = new Font(bf, 12, Font.BOLD);
-         Font font2 = new Font(bf, 16,Font.BOLD, new BaseColor(114, 79, 43));
-         
-         ArrayList<DsOrder> arrDs = cn.GetDsOrder(MaHD);
-         Image logo = Image.getInstance("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Interface\\Images\\logohd.png");
-         
-         logo.scaleAbsolute(125,125);
-         logo.setIndentationLeft(195);
-         document.add(logo);
-         Paragraph ten_quan = new Paragraph("COFFEE HOUSE",font2);
-         ten_quan.setAlignment(Element.ALIGN_CENTER);
-         document.add(ten_quan);
-         Paragraph dia_chi = new Paragraph("D9 - Đại Học Bách Khoa Hà Nội",font2);
-         dia_chi.setAlignment(Element.ALIGN_CENTER);
-         document.add(dia_chi);
-         
-         Paragraph title = new Paragraph("---------------HÓA ĐƠN THANH TOÁN---------------",font1);
-         title.setAlignment(Element.ALIGN_CENTER);
-         title.setSpacingBefore(20);
-         title.setSpacingAfter(20);
-         document.add(title);
-         
-         PdfPTable table = new PdfPTable(4);
-         PdfPCell cell = new PdfPCell(new Phrase("-------------------------------------------------------------------------------------------------------"));
-         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-         cell.setColspan(4);
-         cell.setBorder(Rectangle.NO_BORDER);
-         
-         PdfPCell ma = new PdfPCell(new Phrase("Mã hóa đơn: "+MaHD, font));
-         ma.setColspan(4);
-         ma.setBorder(Rectangle.NO_BORDER);
-         table.addCell(ma);
-         
-         HoaDon hd1 = cn.GetHDbyMa(MaHD);
-         PdfPCell maban = new PdfPCell(new Phrase("Bàn: "+String.valueOf(hd1.GetMaBan()), font));
-         maban.setColspan(4);
-         maban.setBorder(Rectangle.NO_BORDER);
-         table.addCell(maban);
-         
-         PdfPCell time = new PdfPCell(new Phrase("Thời gian: "+String.valueOf(hd1.GetGioDen()), font));
-         time.setColspan(4);
-         time.setBorder(Rectangle.NO_BORDER);
-         table.addCell(time);
-         table.addCell(cell);
-         
-       PdfPCell cell1 = new PdfPCell(new Phrase("Tên Món", font1));
-        
-        cell1.setHorizontalAlignment(Element.ALIGN_LEFT);
-        cell1.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell1);
-        PdfPCell cell2 = new PdfPCell(new Phrase("Số Lượng", font1));
-        
-        cell2.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell2.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell2);
-        PdfPCell cell3 = new PdfPCell(new Phrase("Đơn Giá", font1));
-        cell3.setBorder(Rectangle.NO_BORDER);
-        cell3.setHorizontalAlignment(Element.ALIGN_RIGHT);
-      
-        table.addCell(cell3);
-        
-        PdfPCell cell4 = new PdfPCell(new Phrase("Thành Tiền", font1));
-        cell4.setBorder(Rectangle.NO_BORDER);
-        cell4.setHorizontalAlignment(Element.ALIGN_RIGHT);
-      
-        table.addCell(cell4);
-        table.addCell(cell);
-          
-         for (DsOrder ds : arrDs) {
-             PdfPCell cell5 = new PdfPCell(new Phrase(ds.GetTenMon(),font));
-             cell5.setBorder(Rectangle.NO_BORDER);
-             table.addCell(cell5);
-             PdfPCell cell6 = new PdfPCell(new Phrase(String.valueOf(ds.GetSoLuong()),font));
-             cell6.setBorder(Rectangle.NO_BORDER);
-             cell6.setHorizontalAlignment(Element.ALIGN_RIGHT);
-             table.addCell(cell6);
-             PdfPCell cell7 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(ds.GetGia()))+"VND",font));
-             cell7.setBorder(Rectangle.NO_BORDER);
-             cell7.setHorizontalAlignment(Element.ALIGN_RIGHT);
-             table.addCell(cell7);
-             int tien = ds.GetSoLuong()*ds.GetGia();
-             PdfPCell cell8 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(tien))+"VND",font));
-             cell8.setHorizontalAlignment(Element.ALIGN_RIGHT);
-             cell8.setBorder(Rectangle.NO_BORDER);
-             table.addCell(cell8);
+            try {
+                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\hoa_don_ma_" + MaHD + ".pdf"));
+
+                document.open();
+                BaseFont bf = BaseFont.createFont("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                Font font = new Font(bf, 12);
+                Font font1 = new Font(bf, 12, Font.BOLD);
+                Font font2 = new Font(bf, 16, Font.BOLD, new BaseColor(114, 79, 43));
+
+                ArrayList<DsOrder> arrDs = cn.GetDsOrder(MaHD);
+                Image logo = Image.getInstance("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Interface\\Images\\logohd.png");
+
+                logo.scaleAbsolute(125, 125);
+                logo.setIndentationLeft(195);
+                document.add(logo);
+                Paragraph ten_quan = new Paragraph("COFFEE HOUSE", font2);
+                ten_quan.setAlignment(Element.ALIGN_CENTER);
+                document.add(ten_quan);
+                Paragraph dia_chi = new Paragraph("D9 - Đại Học Bách Khoa Hà Nội", font2);
+                dia_chi.setAlignment(Element.ALIGN_CENTER);
+                document.add(dia_chi);
+
+                Paragraph title = new Paragraph("---------------HÓA ĐƠN THANH TOÁN---------------", font1);
+                title.setAlignment(Element.ALIGN_CENTER);
+                title.setSpacingBefore(20);
+                title.setSpacingAfter(20);
+                document.add(title);
+
+                PdfPTable table = new PdfPTable(4);
+                PdfPCell cell = new PdfPCell(new Phrase("-------------------------------------------------------------------------------------------------------"));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setColspan(4);
+                cell.setBorder(Rectangle.NO_BORDER);
+
+                PdfPCell ma = new PdfPCell(new Phrase("Mã hóa đơn: " + MaHD, font));
+                ma.setColspan(4);
+                ma.setBorder(Rectangle.NO_BORDER);
+                table.addCell(ma);
+
+                HoaDon hd1 = cn.GetHDbyMa(MaHD);
+                PdfPCell maban = new PdfPCell(new Phrase("Bàn: " + String.valueOf(hd1.GetMaBan()), font));
+                maban.setColspan(4);
+                maban.setBorder(Rectangle.NO_BORDER);
+                table.addCell(maban);
+
+                PdfPCell time = new PdfPCell(new Phrase("Thời gian: " + String.valueOf(hd1.GetGioDen()), font));
+                time.setColspan(4);
+                time.setBorder(Rectangle.NO_BORDER);
+                table.addCell(time);
+                table.addCell(cell);
+
+                PdfPCell cell1 = new PdfPCell(new Phrase("Tên Món", font1));
+
+                cell1.setHorizontalAlignment(Element.ALIGN_LEFT);
+                cell1.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell1);
+                PdfPCell cell2 = new PdfPCell(new Phrase("Số Lượng", font1));
+
+                cell2.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                cell2.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell2);
+                PdfPCell cell3 = new PdfPCell(new Phrase("Đơn Giá", font1));
+                cell3.setBorder(Rectangle.NO_BORDER);
+                cell3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+
+                table.addCell(cell3);
+
+                PdfPCell cell4 = new PdfPCell(new Phrase("Thành Tiền", font1));
+                cell4.setBorder(Rectangle.NO_BORDER);
+                cell4.setHorizontalAlignment(Element.ALIGN_RIGHT);
+
+                table.addCell(cell4);
+                table.addCell(cell);
+
+                for (DsOrder ds : arrDs) {
+                    PdfPCell cell5 = new PdfPCell(new Phrase(ds.GetTenMon(), font));
+                    cell5.setBorder(Rectangle.NO_BORDER);
+                    table.addCell(cell5);
+                    PdfPCell cell6 = new PdfPCell(new Phrase(String.valueOf(ds.GetSoLuong()), font));
+                    cell6.setBorder(Rectangle.NO_BORDER);
+                    cell6.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                    table.addCell(cell6);
+                    PdfPCell cell7 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(ds.GetGia())) + "VND", font));
+                    cell7.setBorder(Rectangle.NO_BORDER);
+                    cell7.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                    table.addCell(cell7);
+                    int tien = ds.GetSoLuong() * ds.GetGia();
+                    PdfPCell cell8 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(tien)) + "VND", font));
+                    cell8.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                    cell8.setBorder(Rectangle.NO_BORDER);
+                    table.addCell(cell8);
                 }
-        table.addCell(cell);
-        PdfPCell cell9 = new PdfPCell(new Phrase("Giảm Giá",font1));
-        cell9.setColspan(3);
-        cell9.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell9);
-        PdfPCell cell10 = new PdfPCell(new Phrase(String.valueOf(hd1.GetGiamGia())+"%",font));
-        cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell10.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell10);
-        
-        cell9 = new PdfPCell(new Phrase("Tổng",font1));
-        cell9.setColspan(3);
-        cell9.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell9);
-        cell10 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(tong))+"VND",font));
-        cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell10.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell10);
-        
-        cell9 = new PdfPCell(new Phrase("Tiền Khách Đưa",font1));
-        cell9.setColspan(3);
-        cell9.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell9);
-       String tien_dua = chuyentien.format(Integer.parseInt(txtTienDua.getText()));
-        cell10 = new PdfPCell(new Phrase(tien_dua+"VND",font));
-        cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell10.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell10);
-        table.addCell(cell);
-        
-        cell9 = new PdfPCell(new Phrase("Tiền Thừa",font1));
-        cell9.setColspan(3);
-        cell9.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell9);
-        int thua = tiendua - tong;
-        cell10 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(thua))+"VND",font));
-        cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell10.setBorder(Rectangle.NO_BORDER);
-        table.addCell(cell10);
-        table.addCell(cell);
-        document.add(table);
-        
-        Paragraph footer = new Paragraph("Chúc quý khách vui vẻ, hẹn gặp lại !", font1);
-        footer.setAlignment(Element.ALIGN_CENTER);
-        footer.setSpacingBefore(30);
-        document.add(footer);
-         
-         document.close();
-         writer.close();
-         System.out.println("In thanh cong");
-      } catch (DocumentException e)
-      {
-         e.printStackTrace();
-      } catch (FileNotFoundException e)
-      {
-         e.printStackTrace();
-      }     catch (IOException ex) {
+                table.addCell(cell);
+                PdfPCell cell9 = new PdfPCell(new Phrase("Giảm Giá", font1));
+                cell9.setColspan(3);
+                cell9.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell9);
+                PdfPCell cell10 = new PdfPCell(new Phrase(String.valueOf(hd1.GetGiamGia()) + "%", font));
+                cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                cell10.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell10);
+
+                cell9 = new PdfPCell(new Phrase("Tổng", font1));
+                cell9.setColspan(3);
+                cell9.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell9);
+                cell10 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(tong)) + "VND", font));
+                cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                cell10.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell10);
+
+                cell9 = new PdfPCell(new Phrase("Tiền Khách Đưa", font1));
+                cell9.setColspan(3);
+                cell9.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell9);
+                String tien_dua = chuyentien.format(Integer.parseInt(txtTienDua.getText()));
+                cell10 = new PdfPCell(new Phrase(tien_dua + "VND", font));
+                cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                cell10.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell10);
+                table.addCell(cell);
+
+                cell9 = new PdfPCell(new Phrase("Tiền Thừa", font1));
+                cell9.setColspan(3);
+                cell9.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell9);
+                int thua = tiendua - tong;
+                cell10 = new PdfPCell(new Phrase(String.valueOf(chuyentien.format(thua)) + "VND", font));
+                cell10.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                cell10.setBorder(Rectangle.NO_BORDER);
+                table.addCell(cell10);
+                table.addCell(cell);
+                document.add(table);
+
+                Paragraph footer = new Paragraph("Chúc quý khách vui vẻ, hẹn gặp lại !", font1);
+                footer.setAlignment(Element.ALIGN_CENTER);
+                footer.setSpacingBefore(30);
+                document.add(footer);
+
+                document.close();
+                writer.close();
+                System.out.println("In hoá đơn thành công!");
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException ex) {
                 Logger.getLogger(DLThanhToan.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            
         }
 
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -468,7 +461,6 @@ public class DLThanhToan extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;
