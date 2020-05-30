@@ -6,10 +6,12 @@
 package Interface.BanHang;
 
 import Models.Ban;
+import Models.DsOrder;
 import Models.HoaDon;
 import Mysql.ConnectSQL;
+import com.itextpdf.text.BaseColor;
 
-import java.awt.Font;
+
 import javax.swing.*;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -24,6 +26,20 @@ import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.Sides;
 import javax.swing.JRootPane;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+ 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.Font;
+import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class DLThanhToan extends javax.swing.JDialog {
     NumberFormat chuyentien = new DecimalFormat("#,###,###");
@@ -255,6 +271,34 @@ public class DLThanhToan extends javax.swing.JDialog {
             hd.SetTongTien(tong);
             hd.SetMaHD(MaHD);
             cn.ThanhToan(hd);
+            
+            //In hoa don
+            Document document = new Document();
+            
+      try
+      {
+         PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\hoa_don_ma_"+MaHD+".pdf"));
+        
+         document.open();
+         BaseFont bf = BaseFont.createFont("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+         Font font = new Font(bf,12);
+         ArrayList<DsOrder> arrDs = cn.GetDsOrder(MaHD);
+         for (DsOrder ds : arrDs) {
+            document.add(new Paragraph(ds.GetTenMon()+"x"+ds.GetSoLuong(),font));
+                }
+         
+         document.close();
+         writer.close();
+         System.out.println("In thanh cong");
+      } catch (DocumentException e)
+      {
+         e.printStackTrace();
+      } catch (FileNotFoundException e)
+      {
+         e.printStackTrace();
+      }     catch (IOException ex) {
+                Logger.getLogger(DLThanhToan.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             jpBanHang.bh.FillBan();
             JpGoiMon.gm.removeAll();
@@ -290,7 +334,7 @@ public class DLThanhToan extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;

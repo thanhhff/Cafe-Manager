@@ -218,7 +218,6 @@ public final class frmMain extends javax.swing.JFrame {
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1280, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -239,6 +238,7 @@ public final class frmMain extends javax.swing.JFrame {
         });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 25, 15), 1, true));
         jPanel2.setPreferredSize(new java.awt.Dimension(1280, 600));
 
         btnThietLap.setBackground(new java.awt.Color(56, 25, 15));
@@ -247,6 +247,8 @@ public final class frmMain extends javax.swing.JFrame {
         btnThietLap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/setting.png"))); // NOI18N
         btnThietLap.setText("THIẾT LẬP");
         btnThietLap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnThietLap.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnThietLap.setIconTextGap(5);
         btnThietLap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThietLapActionPerformed(evt);
@@ -259,6 +261,8 @@ public final class frmMain extends javax.swing.JFrame {
         btnQuanLy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/manage.png"))); // NOI18N
         btnQuanLy.setText("QUẢN LÝ");
         btnQuanLy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnQuanLy.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnQuanLy.setIconTextGap(5);
         btnQuanLy.setPreferredSize(new java.awt.Dimension(140, 49));
         btnQuanLy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,8 +276,8 @@ public final class frmMain extends javax.swing.JFrame {
         btnBanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/sell.png"))); // NOI18N
         btnBanHang.setText("BÁN HÀNG");
         btnBanHang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBanHang.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         btnBanHang.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnBanHang.setIconTextGap(5);
         btnBanHang.setMaximumSize(new java.awt.Dimension(157, 49));
         btnBanHang.setMinimumSize(new java.awt.Dimension(157, 49));
         btnBanHang.addActionListener(new java.awt.event.ActionListener() {
@@ -288,6 +292,8 @@ public final class frmMain extends javax.swing.JFrame {
         btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/statistics.png"))); // NOI18N
         btnThongKe.setText("THỐNG KÊ");
         btnThongKe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnThongKe.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnThongKe.setIconTextGap(5);
         btnThongKe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThongKeActionPerformed(evt);
@@ -300,7 +306,7 @@ public final class frmMain extends javax.swing.JFrame {
         btnthoat.setBackground(new java.awt.Color(56, 25, 15));
         btnthoat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnthoat.setForeground(new java.awt.Color(255, 255, 255));
-        btnthoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/out.png"))); // NOI18N
+        btnthoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/0-Image/logout.png"))); // NOI18N
         btnthoat.setText("ĐĂNG XUẤT");
         btnthoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnthoat.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -314,11 +320,12 @@ public final class frmMain extends javax.swing.JFrame {
         btnTrangChu.setBackground(new java.awt.Color(56, 25, 15));
         btnTrangChu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTrangChu.setForeground(new java.awt.Color(255, 255, 255));
-        btnTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/HOME.png"))); // NOI18N
+        btnTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/0-Image/home-run.png"))); // NOI18N
         btnTrangChu.setText("TRANG CHỦ");
         btnTrangChu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnTrangChu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        btnTrangChu.setDefaultCapable(false);
         btnTrangChu.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnTrangChu.setIconTextGap(5);
         btnTrangChu.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 btnTrangChuFocusGained(evt);
@@ -371,22 +378,22 @@ public final class frmMain extends javax.swing.JFrame {
                         .addGap(1, 1, 1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(btnTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTrangChu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnThietLap, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(14, 14, 14)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtqtv)
-                        .addGap(45, 45, 45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(lbltime)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGap(32, 32, 32)
                         .addComponent(btnthoat, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))))
         );
@@ -404,7 +411,7 @@ public final class frmMain extends javax.swing.JFrame {
                     .addComponent(btnBanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnTrangChu)
                     .addComponent(btnthoat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 16, Short.MAX_VALUE)
+                .addGap(0, 12, Short.MAX_VALUE)
                 .addComponent(jpLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
         );
