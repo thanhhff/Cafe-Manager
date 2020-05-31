@@ -19,13 +19,11 @@ public class ConnectSQL {
 
     private Connection connect;
 
-
     /**
      * 0. Connect
      * <p>
      * ConnectSQL()
      */
-
     public ConnectSQL() {
         try {
             connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafe-manager?useUnicode=true&characterEncoding=utf8", "root", "");
@@ -43,10 +41,11 @@ public class ConnectSQL {
     public ArrayList<Ban> GetBan(int maban) {
         ArrayList<Ban> arrBan = null;
         String sql;
-        if (maban == 0)
+        if (maban == 0) {
             sql = "Select * From ban";
-        else
+        } else {
             sql = "Select * From ban Where MaBan = '" + maban + "'";
+        }
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -136,9 +135,9 @@ public class ConnectSQL {
     /**
      * 2. ChiTietHD
      * <p>
-     * public ChiTietHD(int maChiTietHD, int maHoaDon, String maMon, int soLuong, int gia)
+     * public ChiTietHD(int maChiTietHD, int maHoaDon, String maMon, int
+     * soLuong, int gia)
      */
-
     public ChiTietHD GetDsChiTiet(String mamon, int maban) {
         ChiTietHD arrDs = null;
         String sql;
@@ -219,10 +218,11 @@ public class ConnectSQL {
     public ArrayList<DsOrder> GetCtHDByDate(int ma, String d1, String d2) {
         ArrayList<DsOrder> arrDs = null;
         String sql;
-        if (d1.equals(d2))
+        if (d1.equals(d2)) {
             sql = "Select ct.MaMon, TenMon, DVT, SoLuong, Gia, ct.MaHoaDon From chitiethd AS ct INNER JOIN thucdon AS td ON ct.MaMon = td.MaMon INNER JOIN hoadon AS hd ON hd.MaHoaDon = ct.MaHoaDon Where ct.MaHoaDon = '" + ma + "' AND hd.GioDen >= '" + d1 + "'";
-        else
+        } else {
             sql = "Select ct.MaMon, TenMon, DVT, SoLuong, Gia, ct.MaHoaDon From chitiethd AS ct INNER JOIN thucdon AS td ON ct.MaMon = td.MaMon INNER JOIN hoadon AS hd ON hd.MaHoaDon = ct.MaHoaDon Where ct.MaHoaDon = '" + ma + "' AND hd.GioDen BETWEEN '" + d1 + "' AND '" + d2 + "'";
+        }
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -240,9 +240,9 @@ public class ConnectSQL {
     /**
      * 3. DsOrder
      * <p>
-     * public DsOrder(String maMon, String tenMon, String dvt, int soLuong, int gia, int maHoaDon)
+     * public DsOrder(String maMon, String tenMon, String dvt, int soLuong, int
+     * gia, int maHoaDon)
      */
-
     public ArrayList<DsOrder> GetDsOrder(int ma) {
         ArrayList<DsOrder> arrDs = null;
         String sql;
@@ -266,9 +266,9 @@ public class ConnectSQL {
     /**
      * 4. HoaDon
      * <p>
-     * public HoaDon(int MaHoaDon, int GiamGia, int MaBan, Date GioDen, int TongTien, int TrangThai)
+     * public HoaDon(int MaHoaDon, int GiamGia, int MaBan, Date GioDen, int
+     * TongTien, int TrangThai)
      */
-
     public int ThanhToan(HoaDon hd) {
         int update = 0;
         String sql = "UPDATE hoadon SET TongTien = '" + hd.GetTongTien() + "', TrangThai = 1 WHERE MaHoaDon = '" + hd.GetMaHD() + "'";
@@ -319,10 +319,11 @@ public class ConnectSQL {
         }
         return arrhd;
     }
-    public HoaDon GetHDbyMa(int ma){
+
+    public HoaDon GetHDbyMa(int ma) {
         String sql;
         HoaDon arrhd = null;
-        sql = "Select * From hoadon Where MaHoaDon = "+ma;
+        sql = "Select * From hoadon Where MaHoaDon = " + ma;
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -334,6 +335,7 @@ public class ConnectSQL {
         }
         return arrhd;
     }
+
     public int GetMaHD(int ma) {
         String sql;
         int mahd = 0;
@@ -361,8 +363,7 @@ public class ConnectSQL {
         }
         return update;
     }
-    
-    
+
     public ArrayList<HoaDon> GetDSHD() {
         ArrayList<HoaDon> arrDs = null;
         String sql;
@@ -386,8 +387,9 @@ public class ConnectSQL {
         String sql;
         if (d1.equals(d2)) {
             sql = "Select Gia, SoLuong, TenMon, DVT From chitiethd AS ct INNER JOIN hoadon AS hd ON ct.MaHoaDon = hd.MaHoaDon INNER JOIN thucdon AS td ON td.MaMon = ct.MaMon Where hd.TrangThai = 1 AND hd.GioDen >= '" + d1 + "' AND ct.MaMon ='" + m + "'";
-        } else
+        } else {
             sql = "Select Gia, SoLuong, TenMon, DVT From chitiethd AS ct INNER JOIN hoadon AS hd ON ct.MaHoaDon = hd.MaHoaDon INNER JOIN thucdon AS td ON td.MaMon = ct.MaMon Where hd.TrangThai = 1 AND hd.GioDen BETWEEN '" + d1 + "' AND '" + d2 + "' AND ct.MaMon ='" + m + "'";
+        }
         try {
 
             Statement st = connect.createStatement();
@@ -525,7 +527,6 @@ public class ConnectSQL {
      * <p>
      * public TaiKhoan(int id, String tdn, String mk, int lv)
      */
-
     public boolean CheckLogin(TaiKhoan tk) {
         boolean check = false;
         String sql;
@@ -655,9 +656,9 @@ public class ConnectSQL {
     /**
      * 7. ThucDon
      * <p>
-     * public ThucDon(String MaMon, String TenMon, String MaLoai, int DonGia, String DVT)
+     * public ThucDon(String MaMon, String TenMon, String MaLoai, int DonGia,
+     * String DVT)
      */
-
     public ArrayList<ThucDon> GetThucDonByMa(String ma) {
         ArrayList<ThucDon> arrThucDon = null;
         String sql;
@@ -748,17 +749,17 @@ public class ConnectSQL {
         return check;
     }
 
-    public int UpdateThucDon(ThucDon td) {
+    public int UpdateThucDon(ThucDon td){
         int update = 0;
-        String sql = "UPDATE thucdon SET TenMon = '" + td.GetTenMon() + "', MaLoai = '" + td.GetMaLoai() + "', DonGia = '" + td.GetDonGia() + "', DVT = '" + td.GetDVT() + "' WHERE MaMon = '" + td.GetTenMon() + "'";
-        try {
+        String sql = "UPDATE thucdon SET TenMon = '"+td.GetTenMon()+"', MaLoai = '"+td.GetMaLoai()+"', DonGia = '"+td.GetDonGia()+"', DVT = '"+td.GetDVT()+"' WHERE MaMon = '"+td.GetMaMon()+"'";
+        try{
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
-        } catch (SQLException ex) {
+        }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Lỗi UpdaetThucDon: update món không thành công !");
         }
         return update;
-    }
+    }   
 
     public ArrayList<ThucDon> SearchMon(String ten) {
         ArrayList<ThucDon> arrtd = null;
@@ -800,7 +801,6 @@ public class ConnectSQL {
     }
 
     // Interface BanHang 
-
     public ArrayList<ThucDon> GetChiTietMonByMa() {
         ArrayList<ThucDon> arrDs = null;
         String sql;
@@ -826,7 +826,6 @@ public class ConnectSQL {
      * 8. Other
      * <p>
      */
-
     public ArrayList<DsOrder> GetGiaSoLuong(String ma) {
         ArrayList<DsOrder> arrDs = null;
         String sql;
@@ -850,6 +849,5 @@ public class ConnectSQL {
         }
         return arrDs;
     }
-
 
 }
