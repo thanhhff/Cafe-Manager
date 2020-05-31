@@ -26,6 +26,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class jpThucDon extends javax.swing.JPanel {
+
     ConnectSQL cn = new ConnectSQL();
     /**
      * Creates new form jpThucDon
@@ -37,6 +38,7 @@ public class jpThucDon extends javax.swing.JPanel {
     public static jpThucDon td;
 
     public void FillLoai() {
+        // Thực hiện lấy loại các mặt hàng trong quán !
         ArrayList<Loai> arrLoai = cn.GetLoai();
         if (arrLoai != null) {
             JButton btn;
@@ -54,11 +56,17 @@ public class jpThucDon extends javax.swing.JPanel {
                 btn.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mousePressed(MouseEvent e) {
-                        lblNhom.setText("    Nhóm " + l.GetTenLoai());
+                        lblNhom.setText("Nhóm " + l.GetTenLoai());
                         lblNhom.setBackground(Color.decode(l.GetMauSac()));
                         ArrayList<ThucDon> arrThucDon = cn.GetThucDon(l.GetMaLoai());
+
+                        if (l.GetMaLoai().equals("1")) {
+                            arrThucDon = cn.GetMonYeuThich();
+//                            System.out.println(arrThucDon.get(1).GetMaMon());
+                        }
                         jpChonMon.removeAll();
                         jpChonMon.updateUI();
+
                         if (arrThucDon != null) {
                             JPanel[] pn = new JPanel[arrThucDon.size()];
                             //jPanel4.setLayout(new BoxLayout(jPanel4, BoxLayout.PAGE_AXIS));
@@ -101,7 +109,6 @@ public class jpThucDon extends javax.swing.JPanel {
         FillLoai();
 
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
