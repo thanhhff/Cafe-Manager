@@ -712,6 +712,10 @@ public class ConnectSQL {
             Loai all = new Loai(null, "Tất cả các món", "");
             arrloai.add(all);
             while (rs.next()) {
+                // Không thêm nhóm được yêu thích vào danh sách => Tránh trùng lặp !!!
+                if (rs.getString(1).equals("1")) {
+                    continue;
+                }
                 Loai sp = new Loai(rs.getString(1), rs.getString(2), rs.getString(3));
                 arrloai.add(sp);
             }
@@ -830,7 +834,7 @@ public class ConnectSQL {
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()){
+            while (rs.next()) {
                 td = new ThucDon(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
             }
         } catch (SQLException ex) {
