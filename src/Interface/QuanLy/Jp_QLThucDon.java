@@ -378,4 +378,5 @@ public class Jp_QLThucDon extends javax.swing.JPanel {
     private javax.swing.JTable tbBan;
     private javax.swing.JTextField txttim;
     // End of variables declaration//GEN-END:variables
+
 }
