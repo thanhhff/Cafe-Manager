@@ -124,11 +124,11 @@ public class jpThucDon extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setAlignmentX(0.0F);
 
-        lblNhom.setBackground(new java.awt.Color(11, 112, 14));
+        lblNhom.setBackground(new java.awt.Color(204, 255, 204));
         lblNhom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNhom.setForeground(new java.awt.Color(0, 40, 50));
-        lblNhom.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNhom.setText("                          Chọn món");
+        lblNhom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNhom.setText("Chọn Món");
         lblNhom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblNhom.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         lblNhom.setIconTextGap(7);
