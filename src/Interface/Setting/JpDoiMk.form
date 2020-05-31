@@ -24,12 +24,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -49,10 +57,10 @@
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder justification="1" title="&#x110;&#x1ed5;i m&#x1ead;t kh&#x1ea9;u">
                           <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
-                          <Color PropertyName="color" blue="32" green="28" red="0" type="rgb"/>
+                          <Color PropertyName="color" blue="f" green="19" red="38" type="rgb"/>
                         </TitledBorder>
                       </Border>
-                      <Color PropertyName="color" blue="32" green="28" red="0" type="rgb"/>
+                      <Color PropertyName="color" blue="f" green="19" red="38" type="rgb"/>
                     </TitledBorder>
                   </Border>
                   <Color PropertyName="color" blue="f" green="19" red="38" type="rgb"/>
