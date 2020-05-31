@@ -749,17 +749,17 @@ public class ConnectSQL {
         return check;
     }
 
-    public int UpdateThucDon(ThucDon td){
+    public int UpdateThucDon(ThucDon td) {
         int update = 0;
-        String sql = "UPDATE thucdon SET TenMon = '"+td.GetTenMon()+"', MaLoai = '"+td.GetMaLoai()+"', DonGia = '"+td.GetDonGia()+"', DVT = '"+td.GetDVT()+"' WHERE MaMon = '"+td.GetMaMon()+"'";
-        try{
+        String sql = "UPDATE thucdon SET TenMon = '" + td.GetTenMon() + "', MaLoai = '" + td.GetMaLoai() + "', DonGia = '" + td.GetDonGia() + "', DVT = '" + td.GetDVT() + "' WHERE MaMon = '" + td.GetMaMon() + "'";
+        try {
             Statement st = connect.createStatement();
             update = st.executeUpdate(sql);
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Lỗi UpdaetThucDon: update món không thành công !");
         }
         return update;
-    }   
+    }
 
     public ArrayList<ThucDon> SearchMon(String ten) {
         ArrayList<ThucDon> arrtd = null;
@@ -820,6 +820,43 @@ public class ConnectSQL {
             JOptionPane.showMessageDialog(null, "Lỗi GetChiTiteMonByMa: thất bại !");
         }
         return arrDs;
+    }
+
+    public ThucDon GetThucDonMa(String ma) {
+        ThucDon td = null;
+        String sql;
+        sql = "Select * From thucdon Where MaMon = '" + ma + "'";
+
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                td = new ThucDon(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Lỗi GetThucDonMa: không lấy được danh sách thực đơn !");
+        }
+        return td;
+    }
+
+    public ArrayList<ThucDon> GetMonYeuThich() {
+        ArrayList<ThucDon> arrThucDon = null;
+        String sql;
+        sql = "Select ct.MaMon From chitiethd AS ct INNER JOIN hoadon AS hd ON ct.MaHoaDon = hd.MaHoaDon INNER JOIN thucdon AS td ON td.MaMon = ct.MaMon Where hd.TrangThai = 1 order by SoLuong DESC Limit 10";
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            arrThucDon = new ArrayList<ThucDon>();
+            while (rs.next()) {
+//                System.out.println(rs.getString(1));
+                ThucDon td = GetThucDonMa(rs.getString(1));
+                arrThucDon.add(td);
+//                System.out.println(td.GetTenMon());
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Lỗi GetMonYeuThich: thất bại !");
+        }
+        return arrThucDon;
     }
 
     /**
