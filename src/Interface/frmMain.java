@@ -391,7 +391,7 @@ public final class frmMain extends javax.swing.JFrame {
                 .addComponent(btnthoat)
                 .addGap(15, 15, 15))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addContainerGap()
                 .addComponent(jpLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
