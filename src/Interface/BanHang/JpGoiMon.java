@@ -476,16 +476,16 @@ public final class JpGoiMon extends javax.swing.JPanel {
             }
 
             fillThongTin();
-        } 
+        }
     }
 
     private void HuyHD() {
-      
 
         JButton btnhuy = new javax.swing.JButton("Hủy bàn");
         btnhuy.setPreferredSize(new Dimension(100, 40));
-//        btnhuy.setForeground(new java.awt.Color(255, 255, 255));
+        btnhuy.setForeground(new java.awt.Color(255, 255, 255));
         btnhuy.setBounds(100, 50, 100, 40);
+        jpDsMon.setBackground(new java.awt.Color(255, 255, 255));
         jpDsMon.setLayout(null);
         btngoi.setVisible(false);
         jpThongTinThanhToan.setVisible(false);
