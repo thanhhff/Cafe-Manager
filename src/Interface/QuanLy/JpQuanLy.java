@@ -82,7 +82,7 @@ public class JpQuanLy extends javax.swing.JPanel {
         jPanel3.setPreferredSize(new java.awt.Dimension(235, 520));
         jPanel3.setRequestFocusEnabled(false);
 
-        jButton5.setBackground(new java.awt.Color(56, 25, 15));
+        jButton5.setBackground(new java.awt.Color(100, 50, 0));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/list.png"))); // NOI18N
@@ -98,7 +98,7 @@ public class JpQuanLy extends javax.swing.JPanel {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(56, 25, 15));
+        jButton6.setBackground(new java.awt.Color(100, 50, 0));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/menu.png"))); // NOI18N
@@ -115,7 +115,7 @@ public class JpQuanLy extends javax.swing.JPanel {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(56, 25, 15));
+        jButton7.setBackground(new java.awt.Color(100, 50, 0));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/0-Image/table.png"))); // NOI18N
@@ -131,7 +131,7 @@ public class JpQuanLy extends javax.swing.JPanel {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(56, 25, 15));
+        jButton8.setBackground(new java.awt.Color(100, 50, 0));
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/group.png"))); // NOI18N
@@ -191,7 +191,7 @@ public class JpQuanLy extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
                     .addComponent(jpql, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
