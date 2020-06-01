@@ -74,7 +74,7 @@ public class jpThucDon extends javax.swing.JPanel {
                                 pn[i] = new JPanel();
                                 pn[i].setName(arrThucDon.get(i).GetMaMon());
                                 pn[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
-                                pn[i].setBackground(Color.decode("#dfff80"));
+                                pn[i].setBackground(Color.decode("#ffffcc"));
                                 pn[i].setBorder(BorderFactory.createLineBorder(Color.decode("#a3a375"), 2));
                                 pn[i].setPreferredSize(new Dimension(128, 60));
                                 pn[i].add(new JLabel(arrThucDon.get(i).GetTenMon())).setFont(new java.awt.Font("Tahoma", 1, 12));
