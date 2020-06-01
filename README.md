@@ -2,6 +2,8 @@
 
 ### 1. Giới thiệu	
 
+Phân công nhiệm vụ: https://docs.google.com/spreadsheets/d/17zi1K5lT4oKu1lFJ0KAVxbyke2YfdZWs4GgMxJciaNw/
+
 ### 2. Hướng dẫn cài đặt môi trường 	
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-java.svg)](https://www.java.com/)	
