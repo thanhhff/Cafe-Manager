@@ -480,15 +480,18 @@ public final class JpGoiMon extends javax.swing.JPanel {
     }
 
     private void HuyHD() {
-
-        JButton btnhuy = new javax.swing.JButton("Hủy bàn");
+        JButton btnhuy = new javax.swing.JButton();
+        btnhuy.setBackground(new java.awt.Color(100, 50, 0));
         btnhuy.setPreferredSize(new Dimension(100, 40));
-        btnhuy.setForeground(new java.awt.Color(255, 255, 255));
         btnhuy.setBounds(100, 50, 100, 40);
-        jpDsMon.setBackground(new java.awt.Color(255, 255, 255));
+        btnhuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnhuy.setForeground(new java.awt.Color(255, 255, 255));
+        btnhuy.setText("Huỷ bàn");
+
         jpDsMon.setLayout(null);
         btngoi.setVisible(false);
         jpThongTinThanhToan.setVisible(false);
+
         btnhuy.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
