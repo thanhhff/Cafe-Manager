@@ -282,16 +282,16 @@ public class DLThanhToan extends javax.swing.JDialog {
             Document document = new Document();
             NumberFormat chuyentien = new DecimalFormat("#,###,###");
             try {
-                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\hoa_don_ma_" + MaHD + ".pdf"));
+                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D:\\GitHub\\Cafe-Manager\\src\\Hoadon\\hoa_don_ma_" + MaHD + ".pdf"));
 
                 document.open();
-                BaseFont bf = BaseFont.createFont("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Hoadon\\vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                BaseFont bf = BaseFont.createFont("D:\\GitHub\\Cafe-Manager\\src\\Hoadon\\vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font font = new Font(bf, 12);
                 Font font1 = new Font(bf, 12, Font.BOLD);
                 Font font2 = new Font(bf, 16, Font.BOLD, new BaseColor(114, 79, 43));
 
                 ArrayList<DsOrder> arrDs = cn.GetDsOrder(MaHD);
-                Image logo = Image.getInstance("D:\\GitHub\\Cafe-Manager\\Cafe-Manager\\src\\Interface\\Images\\logohd.png");
+                Image logo = Image.getInstance("D:\\GitHub\\Cafe-Manager\\src\\Interface\\Images\\logohd.png");
 
                 logo.scaleAbsolute(125, 125);
                 logo.setIndentationLeft(195);
