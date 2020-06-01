@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 31, 2020 at 04:05 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.30
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 01, 2020 lúc 08:10 AM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cafe-manager`
+-- Cơ sở dữ liệu: `cafe-manager`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ban`
+-- Cấu trúc bảng cho bảng `ban`
 --
 
 CREATE TABLE `ban` (
@@ -34,7 +34,7 @@ CREATE TABLE `ban` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `ban`
+-- Đang đổ dữ liệu cho bảng `ban`
 --
 
 INSERT INTO `ban` (`MaBan`, `TenBan`, `TrangThai`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `ban` (`MaBan`, `TenBan`, `TrangThai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitiethd`
+-- Cấu trúc bảng cho bảng `chitiethd`
 --
 
 CREATE TABLE `chitiethd` (
@@ -77,7 +77,7 @@ CREATE TABLE `chitiethd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `chitiethd`
+-- Đang đổ dữ liệu cho bảng `chitiethd`
 --
 
 INSERT INTO `chitiethd` (`MaChiTietHD`, `MaHoaDon`, `MaMon`, `SoLuong`, `Gia`) VALUES
@@ -114,12 +114,14 @@ INSERT INTO `chitiethd` (`MaChiTietHD`, `MaHoaDon`, `MaMon`, `SoLuong`, `Gia`) V
 (34, 25, 22, 1, 55000),
 (38, 27, 24, 1, 59000),
 (43, 31, 12, 1, 59000),
-(44, 32, 24, 1, 59000);
+(44, 32, 24, 1, 59000),
+(45, 33, 12, 2, 59000),
+(47, 35, 22, 1, 55000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoadon`
+-- Cấu trúc bảng cho bảng `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -132,7 +134,7 @@ CREATE TABLE `hoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `hoadon`
+-- Đang đổ dữ liệu cho bảng `hoadon`
 --
 
 INSERT INTO `hoadon` (`MaHoaDon`, `GiamGia`, `MaBan`, `GioDen`, `TongTien`, `TrangThai`) VALUES
@@ -160,12 +162,14 @@ INSERT INTO `hoadon` (`MaHoaDon`, `GiamGia`, `MaBan`, `GioDen`, `TongTien`, `Tra
 (25, NULL, 5, '2020-05-28 19:39:20', 55000, 1),
 (27, NULL, 15, '2020-05-29 10:25:43', 59000, 1),
 (31, NULL, 4, '2020-05-31 19:57:56', 59000, 1),
-(32, NULL, 5, '2020-05-31 21:04:03', 59000, 1);
+(32, NULL, 5, '2020-05-31 21:04:03', 59000, 1),
+(33, 25, 5, '2020-06-01 12:13:52', 88500, 1),
+(35, NULL, 15, '2020-06-01 12:25:39', 55000, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nhommon`
+-- Cấu trúc bảng cho bảng `nhommon`
 --
 
 CREATE TABLE `nhommon` (
@@ -175,24 +179,24 @@ CREATE TABLE `nhommon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `nhommon`
+-- Đang đổ dữ liệu cho bảng `nhommon`
 --
 
 INSERT INTO `nhommon` (`MaLoai`, `TenLoai`, `MauSac`) VALUES
-(1, 'Món được yêu thích', '#ccccff'),
-(2, 'Cà phê', '#ffccff'),
-(3, 'Thức uống đá xay', '#ffffcc'),
-(4, 'Trà trái cây', '#ccffcc'),
-(5, 'Thức uống trái cây', '#ccccff'),
-(6, 'Macchiato', '#ffcccc'),
-(7, 'Thức ăn nhẹ', '#ccffcc'),
-(8, 'Choco-Matcha', '#ccccff'),
-(9, 'Cà phê gói', '#ffffcc');
+(1, 'Món được yêu thích', '#ccffff'),
+(2, 'Cà phê', '#ccccff'),
+(3, 'Thức uống đá xay', '#ffccff'),
+(4, 'Trà trái cây', '#ffcccc'),
+(5, 'Thức uống trái cây', '#ccffcc'),
+(6, 'Macchiato', '#ccccff'),
+(7, 'Thức ăn nhẹ', '#ffccff'),
+(8, 'Choco-Matcha', '#ffcccc'),
+(9, 'Cà phê gói', '#ccffcc');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taikhoan`
+-- Cấu trúc bảng cho bảng `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -203,7 +207,7 @@ CREATE TABLE `taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Dumping data for table `taikhoan`
+-- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`id`, `username`, `password`, `lv`) VALUES
@@ -217,7 +221,7 @@ INSERT INTO `taikhoan` (`id`, `username`, `password`, `lv`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thucdon`
+-- Cấu trúc bảng cho bảng `thucdon`
 --
 
 CREATE TABLE `thucdon` (
@@ -229,7 +233,7 @@ CREATE TABLE `thucdon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `thucdon`
+-- Đang đổ dữ liệu cho bảng `thucdon`
 --
 
 INSERT INTO `thucdon` (`MaMon`, `TenMon`, `MaLoai`, `DonGia`, `DVT`) VALUES
@@ -274,17 +278,17 @@ INSERT INTO `thucdon` (`MaMon`, `TenMon`, `MaLoai`, `DonGia`, `DVT`) VALUES
 (39, 'Cà phê Arabica TCH', 9, 100000, 'Gói');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `ban`
+-- Chỉ mục cho bảng `ban`
 --
 ALTER TABLE `ban`
   ADD PRIMARY KEY (`MaBan`);
 
 --
--- Indexes for table `chitiethd`
+-- Chỉ mục cho bảng `chitiethd`
 --
 ALTER TABLE `chitiethd`
   ADD PRIMARY KEY (`MaChiTietHD`),
@@ -292,90 +296,90 @@ ALTER TABLE `chitiethd`
   ADD KEY `MaMon` (`MaMon`);
 
 --
--- Indexes for table `hoadon`
+-- Chỉ mục cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHoaDon`),
   ADD KEY `MaBan` (`MaBan`);
 
 --
--- Indexes for table `nhommon`
+-- Chỉ mục cho bảng `nhommon`
 --
 ALTER TABLE `nhommon`
   ADD PRIMARY KEY (`MaLoai`);
 
 --
--- Indexes for table `taikhoan`
+-- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `thucdon`
+-- Chỉ mục cho bảng `thucdon`
 --
 ALTER TABLE `thucdon`
   ADD PRIMARY KEY (`MaMon`),
   ADD KEY `MaLoai` (`MaLoai`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `ban`
+-- AUTO_INCREMENT cho bảng `ban`
 --
 ALTER TABLE `ban`
   MODIFY `MaBan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `chitiethd`
+-- AUTO_INCREMENT cho bảng `chitiethd`
 --
 ALTER TABLE `chitiethd`
-  MODIFY `MaChiTietHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `MaChiTietHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `hoadon`
+-- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT for table `nhommon`
+-- AUTO_INCREMENT cho bảng `nhommon`
 --
 ALTER TABLE `nhommon`
   MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `taikhoan`
+-- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `thucdon`
+-- AUTO_INCREMENT cho bảng `thucdon`
 --
 ALTER TABLE `thucdon`
   MODIFY `MaMon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `chitiethd`
+-- Các ràng buộc cho bảng `chitiethd`
 --
 ALTER TABLE `chitiethd`
   ADD CONSTRAINT `chitiethd_ibfk_1` FOREIGN KEY (`MaHoaDon`) REFERENCES `hoadon` (`MaHoaDon`),
   ADD CONSTRAINT `chitiethd_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `thucdon` (`MaMon`);
 
 --
--- Constraints for table `hoadon`
+-- Các ràng buộc cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`MaBan`) REFERENCES `ban` (`MaBan`);
 
 --
--- Constraints for table `thucdon`
+-- Các ràng buộc cho bảng `thucdon`
 --
 ALTER TABLE `thucdon`
   ADD CONSTRAINT `thucdon_ibfk_1` FOREIGN KEY (`MaLoai`) REFERENCES `nhommon` (`MaLoai`);
