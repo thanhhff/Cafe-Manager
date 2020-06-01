@@ -105,7 +105,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbNhomMon);
 
-        bntThem.setBackground(new java.awt.Color(56, 25, 15));
+        bntThem.setBackground(new java.awt.Color(100, 50, 0));
         bntThem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntThem.setForeground(new java.awt.Color(255, 255, 255));
         bntThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/add.png"))); // NOI18N
@@ -117,7 +117,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             }
         });
 
-        bntSua.setBackground(new java.awt.Color(56, 25, 15));
+        bntSua.setBackground(new java.awt.Color(100, 50, 0));
         bntSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntSua.setForeground(new java.awt.Color(255, 255, 255));
         bntSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/edit.png"))); // NOI18N
@@ -129,7 +129,7 @@ public class Jp_QLNhomMon extends javax.swing.JPanel {
             }
         });
 
-        bntXoa.setBackground(new java.awt.Color(56, 25, 15));
+        bntXoa.setBackground(new java.awt.Color(100, 50, 0));
         bntXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bntXoa.setForeground(new java.awt.Color(255, 255, 255));
         bntXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/delete.png"))); // NOI18N
