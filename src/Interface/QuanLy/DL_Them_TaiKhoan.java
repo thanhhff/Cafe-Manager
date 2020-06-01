@@ -58,7 +58,7 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
             }
         });
 
-        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
+        btnXacNhan.setBackground(new java.awt.Color(100, 50, 0));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -76,7 +76,7 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Mật khẩu:");
 
-        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
+        btnHuy.setBackground(new java.awt.Color(100, 50, 0));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy bỏ");
@@ -140,10 +140,10 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
                     .addComponent(jLabel4)
                     .addComponent(txtlv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnXacNhan)
-                    .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnHuy, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(btnXacNhan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

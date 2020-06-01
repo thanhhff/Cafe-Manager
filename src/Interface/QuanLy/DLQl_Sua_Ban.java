@@ -79,7 +79,7 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
         lblten.setText("Sửa bàn 19");
         lblten.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
+        btnXacNhan.setBackground(new java.awt.Color(100, 50, 0));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -89,7 +89,7 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
             }
         });
 
-        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
+        btnHuy.setBackground(new java.awt.Color(100, 50, 0));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy bỏ");
@@ -131,7 +131,7 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnXacNhan)
                     .addComponent(btnHuy))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

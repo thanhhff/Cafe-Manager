@@ -158,7 +158,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 15, 2));
 
-        btndatban.setBackground(new java.awt.Color(56, 25, 15));
+        btndatban.setBackground(new java.awt.Color(100, 50, 0));
         btndatban.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btndatban.setForeground(new java.awt.Color(255, 255, 255));
         btndatban.setText("Đặt chỗ");
@@ -171,7 +171,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
         });
         jPanel1.add(btndatban);
 
-        btngoi.setBackground(new java.awt.Color(56, 25, 15));
+        btngoi.setBackground(new java.awt.Color(100, 50, 0));
         btngoi.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btngoi.setForeground(new java.awt.Color(255, 255, 255));
         btngoi.setText("Gọi món");
@@ -264,7 +264,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnthugon.setBackground(new java.awt.Color(56, 25, 15));
+        btnthugon.setBackground(new java.awt.Color(100, 50, 0));
         btnthugon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnthugon.setForeground(new java.awt.Color(255, 255, 255));
         btnthugon.setText("<<");

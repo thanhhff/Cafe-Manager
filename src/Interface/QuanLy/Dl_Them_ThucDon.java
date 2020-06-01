@@ -79,7 +79,7 @@ public class Dl_Them_ThucDon extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(114, 79, 43));
         jLabel5.setText("Nhóm món:");
 
-        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
+        btnXacNhan.setBackground(new java.awt.Color(100, 50, 0));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -97,7 +97,7 @@ public class Dl_Them_ThucDon extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(114, 79, 43));
         jLabel3.setText("Đơn giá:");
 
-        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
+        btnHuy.setBackground(new java.awt.Color(100, 50, 0));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy");

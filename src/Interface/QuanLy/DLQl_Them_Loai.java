@@ -75,7 +75,7 @@ public class DLQl_Them_Loai extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(56, 25, 15));
         jLabel2.setText("Thêm loại mới");
 
-        btnHuy.setBackground(new java.awt.Color(56, 25, 15));
+        btnHuy.setBackground(new java.awt.Color(100, 50, 0));
         btnHuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnHuy.setForeground(new java.awt.Color(255, 255, 255));
         btnHuy.setText("Hủy bỏ");
@@ -85,7 +85,7 @@ public class DLQl_Them_Loai extends javax.swing.JDialog {
             }
         });
 
-        btnXacNhan.setBackground(new java.awt.Color(56, 25, 15));
+        btnXacNhan.setBackground(new java.awt.Color(100, 50, 0));
         btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác nhận");
@@ -169,9 +169,9 @@ public class DLQl_Them_Loai extends javax.swing.JDialog {
                     .addComponent(chonmau, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
