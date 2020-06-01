@@ -393,8 +393,8 @@ public final class frmMain extends javax.swing.JFrame {
                         .addComponent(txtqtv)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(lbltime)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnthoat, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnthoat)
                         .addGap(15, 15, 15))))
         );
         jPanel2Layout.setVerticalGroup(

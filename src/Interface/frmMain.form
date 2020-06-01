@@ -102,8 +102,8 @@
                           <Component id="txtqtv" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="38" max="32767" attributes="0"/>
                           <Component id="lbltime" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnthoat" min="-2" pref="159" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnthoat" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
