@@ -250,7 +250,7 @@ public class DLThanhToan extends javax.swing.JDialog {
             } else if (tiendua - tong >= 0) {
                 lbltienthoi.setText(String.valueOf(chuyentien.format(tiendua - tong)) + " VNĐ");
             } else {
-                lbltienthoi.setText("....");
+                lbltienthoi.setText("không hợp lệ");
             }
         } catch (Exception e) {
             txtTienDua.setText("");
@@ -263,7 +263,8 @@ public class DLThanhToan extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Thanh toán không thành công ! \nSố tiền thanh toán không hợp lệ !", "Lỗi Thanh Toán", JOptionPane.ERROR_MESSAGE);
 //            System.out.println("Thanh toán không thành công!");
         } else {
-            System.out.println("Thanh toán thành công!");
+            JOptionPane.showMessageDialog(null, "Thanh toán thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+//            System.out.println("Thanh toán thành công!");
             Ban b = new Ban();
             b.SetTrangThai("Trống");
             b.SetMaBan(MaBan);
