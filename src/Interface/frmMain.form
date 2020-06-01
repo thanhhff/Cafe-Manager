@@ -119,7 +119,7 @@
                       <Component id="btnQuanLy" alignment="3" max="32767" attributes="0"/>
                       <Component id="btnBanHang" alignment="3" max="32767" attributes="0"/>
                       <Component id="btnTrangChu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnthoat" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="btnthoat" alignment="1" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="jpLayout" min="-2" pref="525" max="-2" attributes="0"/>
