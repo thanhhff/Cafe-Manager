@@ -179,6 +179,7 @@ public class DLSoLuong extends javax.swing.JDialog {
         lblban.setForeground(new java.awt.Color(56, 25, 15));
         lblban.setText("Bàn 5:");
 
+        txtgia.setEditable(false);
         txtgia.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtgiaKeyReleased(evt);
