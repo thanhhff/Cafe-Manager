@@ -77,6 +77,7 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
         lblten.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblten.setForeground(new java.awt.Color(56, 25, 15));
         lblten.setText("Sửa bàn 19");
+        lblten.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblten.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnXacNhan.setBackground(new java.awt.Color(100, 50, 0));
@@ -113,9 +114,8 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblten, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txttenban))))
+                        .addComponent(txttenban))
+                    .addComponent(lblten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,7 +131,7 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnXacNhan)
                     .addComponent(btnHuy))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

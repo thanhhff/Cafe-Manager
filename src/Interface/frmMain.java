@@ -50,7 +50,9 @@ public final class frmMain extends javax.swing.JFrame {
         Clock clock = new Clock();
         clock.start();
         txtqtv.setText(Run.tk.Gettdn());
-        if (Run.tk.GetLv() != 1) {
+        
+        // Điều chỉnh False nếu không phải Admin 
+        if (Run.tk.GetLv() != 1 && Run.tk.GetLv() != 0) {
             btnQuanLy.setEnabled(false);
             btnThongKe.setEnabled(false);
         }
@@ -434,7 +436,7 @@ public final class frmMain extends javax.swing.JFrame {
 
     public void thoat() {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        int kq = JOptionPane.showConfirmDialog(null, "Bạn có muốn đóng phần mềm ?", "FBI Warning", JOptionPane.YES_NO_OPTION);
+        int kq = JOptionPane.showConfirmDialog(null, "Bạn có muốn đóng phần mềm ?", "Thông Báo", JOptionPane.YES_NO_OPTION);
         if (kq == 0) {
             System.exit(0);
         }
@@ -442,7 +444,7 @@ public final class frmMain extends javax.swing.JFrame {
 
     private void btnthoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthoatActionPerformed
         // TODO add your handling code here:
-        int kq = JOptionPane.showConfirmDialog(null, "Đăng xuất khỏi tài khoản " + Run.tk.Gettdn() + "?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        int kq = JOptionPane.showConfirmDialog(null, "Đăng xuất khỏi tài khoản " + Run.tk.Gettdn() + "?", "Xác Nhận", JOptionPane.YES_NO_OPTION);
         if (kq == 0) {
             MP3 mp3 = new MP3("src/Sound/tyaran.MP3");
             mp3.play();
@@ -507,9 +509,7 @@ public final class frmMain extends javax.swing.JFrame {
 
     private void btnQuanLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyActionPerformed
         // TODO add your handling code here:
-
         reloadPanel(3);
-
     }//GEN-LAST:event_btnQuanLyActionPerformed
 
     private boolean flag;

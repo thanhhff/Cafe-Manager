@@ -594,7 +594,7 @@ public class ConnectSQL {
     public ArrayList<TaiKhoan> GetTaiKhoan() {
         ArrayList<TaiKhoan> arrtd = null;
         String sql;
-        sql = "SELECT * FROM taikhoan WHERE lv != 1";
+        sql = "SELECT * FROM taikhoan WHERE lv != 0";
         try {
             Statement st = connect.createStatement();
             ResultSet rs = st.executeQuery(sql);
