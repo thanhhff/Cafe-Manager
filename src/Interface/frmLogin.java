@@ -205,7 +205,7 @@ public class frmLogIn extends javax.swing.JFrame {
         btnDangNhap.setBackground(new java.awt.Color(114, 79, 43));
         btnDangNhap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
-        btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/login.png"))); // NOI18N
+        btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/0-Image/login.png"))); // NOI18N
         btnDangNhap.setText("Đăng nhập");
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +224,7 @@ public class frmLogIn extends javax.swing.JFrame {
         btnThoat.setBackground(new java.awt.Color(114, 79, 43));
         btnThoat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnThoat.setForeground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/out.png"))); // NOI18N
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/0-Image/logout.png"))); // NOI18N
         btnThoat.setText("Thoát");
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
