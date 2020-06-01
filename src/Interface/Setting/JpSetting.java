@@ -47,7 +47,7 @@ public class JpSetting extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnThongTin.setBackground(new java.awt.Color(56, 25, 15));
+        btnThongTin.setBackground(new java.awt.Color(100, 50, 0));
         btnThongTin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnThongTin.setForeground(new java.awt.Color(255, 255, 255));
         btnThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/info.png"))); // NOI18N
@@ -62,7 +62,7 @@ public class JpSetting extends javax.swing.JPanel {
             }
         });
 
-        btnCapNhat.setBackground(new java.awt.Color(56, 25, 15));
+        btnCapNhat.setBackground(new java.awt.Color(100, 50, 0));
         btnCapNhat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCapNhat.setForeground(new java.awt.Color(255, 255, 255));
         btnCapNhat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/Images/update.png"))); // NOI18N
@@ -109,7 +109,7 @@ public class JpSetting extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JpPaneSetting, javax.swing.GroupLayout.DEFAULT_SIZE, 1055, Short.MAX_VALUE))
+                .addComponent(JpPaneSetting, javax.swing.GroupLayout.DEFAULT_SIZE, 1063, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
