@@ -107,6 +107,7 @@ public class jpThucDon extends javax.swing.JPanel {
         initComponents();
         td = this;
         FillLoai();
+
     }
 
     /**

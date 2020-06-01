@@ -352,7 +352,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnthugon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jpthucdon.setBackground(new java.awt.Color(255, 255, 255));
@@ -375,8 +375,8 @@ public final class JpGoiMon extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpThongTinBan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpthucdon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpthucdon, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+            .addComponent(jpThongTinBan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleParent(this);
@@ -483,7 +483,7 @@ public final class JpGoiMon extends javax.swing.JPanel {
         JButton btnhuy = new javax.swing.JButton();
         btnhuy.setBackground(new java.awt.Color(100, 50, 0));
         btnhuy.setPreferredSize(new Dimension(100, 40));
-        btnhuy.setBounds(100, 50, 100, 40);
+        btnhuy.setBounds(100, 60, 100, 40);
         btnhuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnhuy.setForeground(new java.awt.Color(255, 255, 255));
         btnhuy.setText("Huỷ bàn");
