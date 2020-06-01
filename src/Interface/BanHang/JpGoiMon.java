@@ -476,13 +476,15 @@ public final class JpGoiMon extends javax.swing.JPanel {
             }
 
             fillThongTin();
-        }
+        } 
     }
 
     private void HuyHD() {
+      
 
-        JButton btnhuy = new JButton("Hủy bàn");
+        JButton btnhuy = new javax.swing.JButton("Hủy bàn");
         btnhuy.setPreferredSize(new Dimension(100, 40));
+//        btnhuy.setForeground(new java.awt.Color(255, 255, 255));
         btnhuy.setBounds(100, 50, 100, 40);
         jpDsMon.setLayout(null);
         btngoi.setVisible(false);
@@ -510,7 +512,6 @@ public final class JpGoiMon extends javax.swing.JPanel {
 
     private void btngoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngoiActionPerformed
         if (btngoi.getText().equals("Hủy bàn")) {
-
             jpthucdon.removeAll();
             jpthucdon.add(jLabel1);
             jpthucdon.updateUI();
@@ -526,8 +527,8 @@ public final class JpGoiMon extends javax.swing.JPanel {
             btndatban.setVisible(true);
             btndatban.setText("Đặt bàn");
             return;
-
         }
+
         if (btngoi.getText().equals("Thanh toán")) {
             DLThanhToan thanhtoan = new DLThanhToan(Run.QlCafe, true, tongtien, TenBan, MaBan, MaHD);//tongtien trang thai ban ten ban
             thanhtoan.setLocationRelativeTo(null);
@@ -541,6 +542,8 @@ public final class JpGoiMon extends javax.swing.JPanel {
             SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             lblgioden.setText(df.format(date));
             lbltrangthai.setText("Đang phục vụ");
+
+            // Chỉnh đặt bàn và thu gọn thành false. Không hiển thị 2 cái này nữa !
             btndatban.setVisible(false);
             btnthugon.setVisible(false);
             btngoi.setText("Hủy bàn");
