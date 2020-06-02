@@ -203,7 +203,7 @@ public class DL_Sua_TaiKhoan extends javax.swing.JDialog {
         if (in > 0) {
             Jp_QLTaiKhoan.tk.FillTable();
             Jp_QLTaiKhoan.tk.updateUI();
-
+            JOptionPane.showMessageDialog(null, "Sửa tài khoản thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
         }
 

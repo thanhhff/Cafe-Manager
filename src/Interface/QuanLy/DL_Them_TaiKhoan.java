@@ -173,7 +173,7 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
             return;
         }
         if (txtlv.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nhâp Level !");
+            JOptionPane.showMessageDialog(null, "Nhâp cấp độ !");
             txtlv.requestFocus();
             return;
         }
@@ -181,12 +181,14 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
         tk.Settdn(txtten.getText());
         tk.Setmk(txtpass.getText());
         tk.SetLv(Integer.parseInt(txtlv.getText()));
+        
+        
 
         int in = cn.InserTK(tk);
         if (in > 0) {
             Jp_QLTaiKhoan.tk.FillTable();
             Jp_QLTaiKhoan.tk.updateUI();
-
+            JOptionPane.showMessageDialog(null, "Thêm tài khoản thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
         }
 

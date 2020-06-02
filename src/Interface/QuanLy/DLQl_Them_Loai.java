@@ -10,14 +10,15 @@ import Models.Loai;
 import Mysql.ConnectSQL;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.colorchooser.ColorSelectionModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-
 public class DLQl_Them_Loai extends javax.swing.JDialog {
+
     ConnectSQL cn = new ConnectSQL();
 
     /**
@@ -211,21 +212,38 @@ public class DLQl_Them_Loai extends javax.swing.JDialog {
         Loai l = new Loai();
         l.SetTenLoai(txtTenLoai.getText());
         l.SetMauSac(hex);
-        int insert = cn.InsertLoai(l);
-        if (insert > 0) {
-            Jp_QLNhomMon.nhom.FillTable();
-            Jp_QLNhomMon.nhom.updateUI();
-            try {
-                Jp_QLThucDon.td.Fillcbb();
-                Jp_QLThucDon.td.updateUI();
-                jpThucDon.td.FillLoai();
-                jpThucDon.td.updateUI();
-            } catch (Exception e) {
 
+        // Kiểm tra trùng lặp tên Loại 
+        ArrayList<Loai> arrLoai = cn.GetLoai();
+        int trungLap = 0;
+        if (arrLoai != null) {
+            for (int i = 0; i < arrLoai.size(); i++) {
+                if (arrLoai.get(i).GetTenLoai().equals(l.GetTenLoai())) {
+                    JOptionPane.showMessageDialog(null, "Tên loại không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                    trungLap = 1;
+                    break;
+                }
             }
-            this.dispose();
         }
 
+        if (trungLap == 0) {
+            int insert = cn.InsertLoai(l);
+            if (insert > 0) {
+                Jp_QLNhomMon.nhom.FillTable();
+                Jp_QLNhomMon.nhom.updateUI();
+                try {
+                    Jp_QLThucDon.td.Fillcbb();
+                    Jp_QLThucDon.td.updateUI();
+                    jpThucDon.td.FillLoai();
+                    jpThucDon.td.updateUI();
+                } catch (Exception e) {
+
+                }
+                JOptionPane.showMessageDialog(null, "Thêm loại thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+            }
+
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXacNhanActionPerformed
