@@ -160,18 +160,18 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
         b.SetTrangThai(trangthai);
 
         // Setting tên trùng nhau
-//        ArrayList<Ban> arrBan;
-//        arrBan = cn.GetBan(0);
+        ArrayList<Ban> arrBan;
+        arrBan = cn.GetBan(0);
         int trungLap = 0;
-//        if (arrBan != null) {
-//            for (int i = 0; i < arrBan.size(); i++) {
-//                if (arrBan.get(i).GetTenBan().equals(b.GetTenBan())) {
-//                    JOptionPane.showMessageDialog(null, "Tên bàn không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-//                    trungLap = 1;
-//                    break;
-//                }
-//            }
-//        }
+        if (arrBan != null) {
+            for (int i = 0; i < arrBan.size(); i++) {
+                if (arrBan.get(i).GetTenBan().equals(b.GetTenBan())) {
+                    JOptionPane.showMessageDialog(null, "Tên bàn không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                    trungLap = 1;
+                    break;
+                }
+            }
+        }
 
         if (trungLap == 0) {
             cn.UpdateBan(b);

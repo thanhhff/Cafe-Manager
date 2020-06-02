@@ -214,17 +214,17 @@ public class DLQl_Them_Loai extends javax.swing.JDialog {
         l.SetMauSac(hex);
 
         // Kiểm tra trùng lặp tên Loại 
-        ArrayList<Loai> arrLoai = cn.GetLoai();
+//        ArrayList<Loai> arrLoai = cn.GetLoai();
         int trungLap = 0;
-        if (arrLoai != null) {
-            for (int i = 0; i < arrLoai.size(); i++) {
-                if (arrLoai.get(i).GetTenLoai().equals(l.GetTenLoai())) {
-                    JOptionPane.showMessageDialog(null, "Tên loại không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-                    trungLap = 1;
-                    break;
-                }
-            }
-        }
+//        if (arrLoai != null) {
+//            for (int i = 0; i < arrLoai.size(); i++) {
+//                if (arrLoai.get(i).GetTenLoai().equals(l.GetTenLoai())) {
+//                    JOptionPane.showMessageDialog(null, "Tên loại không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+//                    trungLap = 1;
+//                    break;
+//                }
+//            }
+//        }
 
         if (trungLap == 0) {
             int insert = cn.InsertLoai(l);
