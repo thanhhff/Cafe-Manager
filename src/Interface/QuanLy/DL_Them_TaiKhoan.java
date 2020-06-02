@@ -7,11 +7,13 @@ package Interface.QuanLy;
 
 import Models.TaiKhoan;
 import Mysql.ConnectSQL;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
 public class DL_Them_TaiKhoan extends javax.swing.JDialog {
+
     ConnectSQL cn = new ConnectSQL();
 
     /**
@@ -173,7 +175,7 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
             return;
         }
         if (txtlv.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nhâp Level !");
+            JOptionPane.showMessageDialog(null, "Nhâp cấp độ !");
             txtlv.requestFocus();
             return;
         }
@@ -182,14 +184,29 @@ public class DL_Them_TaiKhoan extends javax.swing.JDialog {
         tk.Setmk(txtpass.getText());
         tk.SetLv(Integer.parseInt(txtlv.getText()));
 
-        int in = cn.InserTK(tk);
-        if (in > 0) {
-            Jp_QLTaiKhoan.tk.FillTable();
-            Jp_QLTaiKhoan.tk.updateUI();
+        ArrayList<TaiKhoan> tkList;
+        tkList = cn.GetTaiKhoan();
+        int trungLap = 0;
 
-            this.dispose();
+        if (tkList != null) {
+            for (int i = 0; i < tkList.size(); i++) {
+                if (tkList.get(i).Gettdn().equals(tk.Gettdn())) {
+                    JOptionPane.showMessageDialog(null, "Tên tài khoản không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                    trungLap = 1;
+                    break;
+                }
+            }
         }
 
+        if (trungLap == 0) {
+            int in = cn.InserTK(tk);
+            if (in > 0) {
+                Jp_QLTaiKhoan.tk.FillTable();
+                Jp_QLTaiKhoan.tk.updateUI();
+                JOptionPane.showMessageDialog(null, "Thêm tài khoản thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+            }
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXacNhanActionPerformed

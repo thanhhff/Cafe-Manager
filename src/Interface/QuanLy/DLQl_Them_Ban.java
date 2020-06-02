@@ -8,11 +8,13 @@ package Interface.QuanLy;
 import Interface.BanHang.jpBanHang;
 import Models.Ban;
 import Mysql.ConnectSQL;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
 public class DLQl_Them_Ban extends javax.swing.JDialog {
+
     ConnectSQL cn = new ConnectSQL();
 
     /**
@@ -142,23 +144,41 @@ public class DLQl_Them_Ban extends javax.swing.JDialog {
 
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         if (txtTenBan.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Tên bàn không được để trống !");
+            JOptionPane.showMessageDialog(null, "Tên bàn không được để trống !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         Ban b = new Ban();
         b.SetTenBan("Bàn " + txtTenBan.getText());
         b.SetTrangThai("Trống");
-        cn.InsertBan(b);
 
-        Jp_QLBan.B.FillTable();
-        Jp_QLBan.B.updateUI();
-        try {
-            jpBanHang.bh.FillBan();
-            jpBanHang.bh.updateUI();
-        } catch (Exception e) {
-
+        // Setting tên trùng nhau
+        ArrayList<Ban> arrBan;
+        arrBan = cn.GetBan(0);
+        int trungLap = 0;
+        if (arrBan != null) {
+            for (int i = 0; i < arrBan.size(); i++) {
+                if (arrBan.get(i).GetTenBan().equals(b.GetTenBan())) {
+                    JOptionPane.showMessageDialog(null, "Tên bàn không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                    trungLap = 1;
+                    break;
+                }
+            }
         }
-        this.dispose();
+
+        if (trungLap == 0) {
+            cn.InsertBan(b);
+
+            Jp_QLBan.B.FillTable();
+            Jp_QLBan.B.updateUI();
+            try {
+                jpBanHang.bh.FillBan();
+                jpBanHang.bh.updateUI();
+            } catch (Exception e) {
+
+            }
+            JOptionPane.showMessageDialog(null, "Thêm bàn thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
 
 // TODO add your handling code here:
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -175,7 +195,6 @@ public class DLQl_Them_Ban extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;

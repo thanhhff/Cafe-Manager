@@ -237,6 +237,7 @@ public class Dl_Them_ThucDon extends javax.swing.JDialog {
         } catch (Exception e) {
 
         }
+        JOptionPane.showMessageDialog(null, "Thêm mới thực đơn thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
 
         // TODO add your handling code here:

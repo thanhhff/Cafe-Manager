@@ -10,6 +10,7 @@ import Models.Loai;
 import Mysql.ConnectSQL;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.colorchooser.ColorSelectionModel;
@@ -17,6 +18,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class DLQl_Sua_Nhom extends javax.swing.JDialog {
+
     ConnectSQL cn = new ConnectSQL();
     /**
      * Creates new form DLQl_Sua_Nhom
@@ -222,27 +224,50 @@ public class DLQl_Sua_Nhom extends javax.swing.JDialog {
         loai.SetTenLoai(txtten.getText());
         loai.SetMauSac(hex);
         loai.SetMaLoai(MaNhom);
-        int update = cn.UpdateLoai(loai);
-        if (update > 0) {
-            Jp_QLNhomMon.nhom.FillTable();
-            Jp_QLNhomMon.nhom.updateUI();
-            try {
-                Jp_QLThucDon.td.Fillcbb();
-                Jp_QLThucDon.td.FillTable(null);
-                Jp_QLThucDon.td.updateUI();
-                jpThucDon.td.FillLoai();
-                jpThucDon.td.updateUI();
-            } catch (Exception e) {
 
+        // Kiểm tra trùng lặp tên Loại 
+//        ArrayList<Loai> arrLoai = cn.GetLoai();
+        int trungLap = 0;
+//        if (arrLoai != null) {
+//            for (int i = 0; i < arrLoai.size(); i++) {
+////                System.out.println(arrLoai.get(i).GetMaLoai());
+//                if (arrLoai.get(i).GetMaLoai().equals(String.valueOf(i + 1)))
+//                {
+////                    System.out.println(arrLoai.get(i).GetMaLoai());
+//                    continue;
+//                }
+//                if (arrLoai.get(i).GetTenLoai().equals(loai.GetTenLoai())) {
+//                    JOptionPane.showMessageDialog(null, "Tên loại không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+//                    trungLap = 1;
+//                    break;
+//                }
+//            }
+//        }
+
+        if (trungLap == 0) {
+            int update = cn.UpdateLoai(loai);
+            if (update > 0) {
+                Jp_QLNhomMon.nhom.FillTable();
+                Jp_QLNhomMon.nhom.updateUI();
+                try {
+                    Jp_QLThucDon.td.Fillcbb();
+                    Jp_QLThucDon.td.FillTable(null);
+                    Jp_QLThucDon.td.updateUI();
+                    jpThucDon.td.FillLoai();
+                    jpThucDon.td.updateUI();
+                } catch (Exception e) {
+
+                }
+                JOptionPane.showMessageDialog(null, "Sửa loại thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
             }
-            this.dispose();
+
         }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
     private void chonmauMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chonmauMousePressed
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_chonmauMousePressed

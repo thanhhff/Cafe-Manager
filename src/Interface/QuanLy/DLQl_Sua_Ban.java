@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 
-
 public class DLQl_Sua_Ban extends javax.swing.JDialog {
+
     ConnectSQL cn = new ConnectSQL();
     /**
      * Creates new form DLQl_Sua_Ban
@@ -158,18 +158,35 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
         b.SetTenBan("Bàn " + txttenban.getText());
         b.SetMaBan(maban);
         b.SetTrangThai(trangthai);
-        cn.UpdateBan(b);
 
-        Jp_QLBan.B.FillTable();
-        Jp_QLBan.B.updateUI();
-        try {
-            jpBanHang.bh.FillBan();
-            jpBanHang.bh.updateUI();
-        } catch (Exception e) {
-
+        // Setting tên trùng nhau
+        ArrayList<Ban> arrBan;
+        arrBan = cn.GetBan(0);
+        int trungLap = 0;
+        if (arrBan != null) {
+            for (int i = 0; i < arrBan.size(); i++) {
+                if (arrBan.get(i).GetTenBan().equals(b.GetTenBan())) {
+                    JOptionPane.showMessageDialog(null, "Tên bàn không được trùng lặp !", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                    trungLap = 1;
+                    break;
+                }
+            }
         }
-        this.dispose();
 
+        if (trungLap == 0) {
+            cn.UpdateBan(b);
+
+            Jp_QLBan.B.FillTable();
+            Jp_QLBan.B.updateUI();
+            try {
+                jpBanHang.bh.FillBan();
+                jpBanHang.bh.updateUI();
+            } catch (Exception e) {
+
+            }
+            JOptionPane.showMessageDialog(null, "Sửa bàn thành công !", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -189,7 +206,6 @@ public class DLQl_Sua_Ban extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;
